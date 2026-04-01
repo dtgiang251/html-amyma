@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fustat:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --navX: 108px;
+}
+
+body {
+  @apply bg-white text-charcoal antialiased;
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
