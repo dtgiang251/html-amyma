@@ -4,7 +4,13 @@ import Hero from "./components/Hero";
 import Logos from "./components/Logos";
 import Problem from "./components/Problem";
 import Needs from "./components/Needs";
-import Contact from "./page/contact"; // Thêm dòng này
+import Contact from "./page/contact";
+import About from "./page/about";
+import FundingOverview from "./page/funding-overview";
+import OurWork from "./page/our-work";
+import OurWorkProject from "./page/our-work-project";
+import Services from "./page/services";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,13 +26,16 @@ function App() {
                 <Logos />
                 <Problem />
                 <Needs />
-                <main className="px-4 py-16 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)] max-w-screen-2xl mx-auto">
-                  <section className="max-w-4xl"></section>
-                </main>
+                <Footer />
               </>
             }
           />
+          <Route path="/page/about" element={<About />} />
+          <Route path="/page/funding-overview" element={<FundingOverview />} />
+          <Route path="/page/our-work" element={<OurWork />} />   
+          <Route path="/page/our-work-project" element={<OurWorkProject />} />   
           <Route path="/page/contact" element={<Contact />} />
+          <Route path="/page/services" element={<Services />} />
         </Routes>
       </div>
     </BrowserRouter>

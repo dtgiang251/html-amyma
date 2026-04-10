@@ -1,4 +1,5 @@
 import { useId } from "react";
+import { useReveal } from "../hooks/useReveal";
 
 const XIcon = ({ className = "h-6 w-6 text-primaryOrange" }) => (
   <svg
@@ -22,10 +23,11 @@ const bulletItems = [
 ];
 
 export default function Problem() {
-  const gridId = useId();
+ const gridId = useId();
+  const revealRef = useReveal();
 
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section ref={revealRef} className="relative overflow-hidden bg-white">
       {/* Background grid */}
       <div className="pointer-events-none absolute inset-0 z-0 select-none opacity-60">
         <svg className="h-full w-full" aria-hidden>
@@ -48,36 +50,37 @@ export default function Problem() {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-screen-2xl px-4 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-28 xl:px-[var(--navX,108px)]">
-        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-12">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        <img className="absolute top-0 left-0 right-0 m-auto" alt="" src="/bg-section-02.svg"/>
+        <div className="relative z-10 grid items-start gap-12 md:grid-cols-2 lg:gap-12">
           {/* Left content */}
-          <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-3">
-                <h2 className="font-dmSans text-[clamp(2.25rem,4vw,3.5rem)] font-bold leading-[1.1] text-primaryBlue">
+                <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold tracking-[-2px] text-primaryBlue animate-hero-title">
                   Templates Don&apos;t Sell.
                 </h2>
-                <h3 className="font-dmSans text-[clamp(2.25rem,4vw,3.5rem)] font-bold leading-[1.1] text-primaryOrange">
+                <h3 className="apple-reveal delay-200 font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryOrange -mt-2.5 tracking-[-2px] animate-hero-title">
                   Custom Design Does.
                 </h3>
               </div>
-              <p className="max-w-[44ch] font-dmSans text-[clamp(1.125rem,2vw,1.5rem)] leading-7 text-charcoalMedium">
+              <p className="apple-reveal delay-400 lg:max-w-[44ch] font-dmSans text-[clamp(1.125rem,2vw,1.5rem)] leading-7 text-charcoalMedium">
                 Too many businesses settle for cookie-cutter websites that look
                 the same as everyone else&apos;s.
               </p>
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div className="apple-reveal delay-500 flex flex-col gap-6">
               <div className="font-dmSans text-[clamp(1.125rem,2vw,1.5rem)] font-semibold leading-7 text-charcoal">
                 Using templates creates:
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-6 flow-wrap"> 
                 {bulletItems.map((label) => (
                   <div
                     key={label}
-                    className="flex items-center gap-4 rounded-[0_16px_16px_16px] bg-primaryOrangeLight px-5 py-4"
+                    className="flex items-center self-start gap-4 rounded-[0_16px_16px_16px] bg-primaryOrangeLight px-5 py-[18.5px]"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-pill border-2 border-primaryOrange bg-transparent">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-pill border-2 border-primaryOrange bg-transparent">
                       <XIcon className="h-6 w-6 text-primaryOrange" />
                     </div>
                     <div className="font-dmSans text-[clamp(1.05rem,2vw,1.5rem)] leading-7 text-black">
@@ -90,48 +93,10 @@ export default function Problem() {
           </div>
 
           {/* Right visual */}
-          <div className="relative mx-auto w-full max-w-[640px]">
-            {/* Teal diamonds */}
-            <span
-              aria-hidden
-              className="absolute -right-1 top-20 hidden h-2 w-2 rotate-45 rounded-sm bg-primaryTeal sm:block"
-            />
-            <span
-              aria-hidden
-              className="absolute -right-1 top-32 hidden h-2 w-2 rotate-45 rounded-sm bg-primaryTeal sm:block"
-            />
-            <span
-              aria-hidden
-              className="absolute right-10 -bottom-2 hidden h-2 w-2 rotate-45 rounded-sm bg-primaryTeal sm:block"
-            />
-            <span
-              aria-hidden
-              className="absolute right-24 -bottom-2 hidden h-2 w-2 rotate-45 rounded-sm bg-primaryTeal sm:block"
-            />
-
-            <div className="relative rounded-2xl bg-primaryBlueLight p-6 sm:p-10">
-              {/* Placeholder box that stays even if image is removed */}
-              <div className="absolute left-1/2 top-1/2 h-[52%] w-[62%] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-primaryBlueLight" />
-
+          <div className="relative mx-auto w-full max-w-[640px]"> 
+            <div className="relative rounded-2xl px-6 sm:px-10"> 
               <div className="relative aspect-[5/4] w-full">
-                {/* Shadow */}
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/40d65da2588bca64edad90da6325fe61c17cc129?width=1200"
-                  alt=""
-                  className="absolute inset-x-0 bottom-0 mx-auto w-[92%] max-w-full select-none object-contain opacity-80"
-                  draggable={false}
-                  loading="lazy"
-                  decoding="async"
-                />
-                {/* Tablet mock */}
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/dc81919a5c2a5e5bcc508d2ee5cf8d4a8cabcefc?width=1200"
-                  alt="Tablet mockup"
-                  className="absolute inset-0 h-full w-full select-none object-contain"
-                  draggable={false}
-                  loading="lazy"
-                  decoding="async"
-                />
+                 <img className="apple-reveal animate-hero-float" alt="" src="/h-img02.png"/>
               </div>
             </div>
           </div>

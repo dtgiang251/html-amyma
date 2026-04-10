@@ -1,5 +1,14 @@
 import { useId } from "react";
-import laptopImage from "../assets/needs/laptop-ui.png";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Import CSS (Bắt buộc phải có để slider hiển thị đúng)
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import 'swiper/css';
+import { useReveal } from "../hooks/useReveal";
 
 const IconDevices = ({ className = "h-10 w-10" }) => {
   const gradientId = useId();
@@ -122,8 +131,11 @@ const TealDiamond = ({ className = "" }) => (
 
 export default function Needs() {
   const gridId = useId();
+  const revealRef = useReveal();
 
   return (
+    <>
+    <div ref={revealRef}>
     <section className="relative overflow-hidden bg-white">
       <div className="pointer-events-none absolute inset-0 z-0 select-none opacity-60">
         <svg className="h-full w-full" aria-hidden>
@@ -146,18 +158,16 @@ export default function Needs() {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-screen-2xl px-4 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-28 xl:px-[var(--navX,108px)]">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-12">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left: image */}
-          <div className="relative mx-auto w-full max-w-[640px]">
-            <TealDiamond className="-left-2 top-6 hidden sm:block" />
-            <TealDiamond className="-left-2 top-20 hidden sm:block" />
-
-            <div className="relative rounded-2xl bg-primaryBlueLight px-6 py-10 sm:px-10 sm:py-14">
+          <div className="hidden lg:block relative mx-auto w-full lg:col-span-5">
+            
+            <div className="relative rounded-2xl">
               <img
-                src={laptopImage}
+                src="/h-img03.png"
                 alt="Laptop mockup"
-                className="mx-auto w-full max-w-[560px] select-none object-contain drop-shadow-[0_28px_40px_rgba(0,0,0,0.12)]"
+                className="apple-reveal animate-hero-float mx-auto w-full max-w-[560px] select-none object-contain drop-shadow-[0_28px_40px_rgba(0,0,0,0.12)]"
                 draggable={false}
                 loading="lazy"
                 decoding="async"
@@ -166,29 +176,26 @@ export default function Needs() {
           </div>
 
           {/* Right: content */}
-          <div className="relative">
-            <TealDiamond className="right-8 top-2 hidden lg:block" />
-            <TealDiamond className="right-0 top-2 hidden lg:block" />
-
-            <h2 className="font-dmSans text-[clamp(2.25rem,4vw,3.5rem)] font-bold leading-[1.1] text-primaryBlue">
+          <div className="relative lg:col-span-7"> 
+            <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryBlue tracking-[-2px]">
               You don&apos;t need{" "}
               <span className="text-primaryOrange">"just another website."</span>
             </h2>
 
-            <div className="mt-10 font-dmSans text-xl font-semibold leading-7 text-charcoal">
+            <div className="apple-reveal delay-200 mt-10 font-dmSans text-2xl font-semibold leading-7 text-charcoal">
               You need:
             </div>
 
-            <div className="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="apple-reveal delay-300 mt-8 grid gap-10 sm:grid-cols-3 lg:grid-cols-3">
               {features.map(({ title, description, Icon }) => (
                 <div key={title} className="flex flex-col items-start gap-4">
-                  <div className="rounded-[0_16px_16px_16px] bg-primaryOrangeLight p-4">
-                    <Icon className="h-10 w-10" />
+                  <div className="rounded-[0_16px_16px_16px] bg-primaryOrangeLight p-4 w-[69px] h-[69px]">
+                    <Icon className="" />
                   </div>
-                  <div className="font-dmSans text-xl font-bold leading-7 text-charcoal whitespace-pre-line">
+                  <div className="font-dmSans text-2xl font-bold leading-7 text-charcoal whitespace-pre-line">
                     {title}
                   </div>
-                  <div className="font-dmSans text-base leading-6 text-[#3C3C3C]">
+                  <div className="font-dmSans text-lg leading-6 text-[#3C3C3C]">
                     {description}
                   </div>
                 </div>
@@ -198,6 +205,1015 @@ export default function Needs() {
         </div>
       </div>
     </section>
+{/* <div className="absolute -top-4 -left-4">*/}
+    <section className="">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        
+        {/* Header Section */}
+        <div className="">
+          <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold tracking-[-2px] text-primaryBlue mb-3">
+            Let Us be Your <span className="text-[#FF8A00]">Digital Partner in Luxembourg</span>
+          </h2>
+          <div className="max-w-[700px] mb-10">
+            <p className="apple-reveal delay-200 text-[clamp(1.125rem,2vw,1.5rem)] text-[#7E7E7E]">
+              For over 20 years, we've been helping businesses and institutions in Luxembourg 
+              turn ideas into high-performing websites and apps.
+            </p>
+          </div>
+        </div>
+
+        {/* Values/Features Section */}
+        <div className="mb-12">
+          <p className="apple-reveal delay-300 font-semibold text-[#1C1C1C] mb-8 text-[clamp(1.125rem,2vw,1.5rem)]">We don't believe in shortcuts. Every project is:</p>
+          
+          <div className="apple-reveal delay-400 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Unique */}
+            <div className="flex items-center gap-7">
+              <div className="bg-[#FFF8F0] rounded-tl-none rounded-3xl flex-shrink-0">
+                <div className="w-[80px] h-[80px] lg:w-[124px] lg:h-[124px] p-[16px] lg:p-[26px] flex items-center justify-center text-center">
+                  <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M71.9476 44.7884C68.8234 47.9126 63.7581 47.9126 60.6339 44.7884C57.5097 41.6642 57.5097 36.5989 60.6339 33.4747C63.7581 30.3505 68.8234 30.3505 71.9476 33.4747C75.0718 36.5989 75.0718 41.6643 71.9476 44.7884Z" fill="url(#paint0_linear_552_72220)"/>
+                  <path d="M44.3156 17.1569C41.1914 20.281 36.1261 20.281 33.0019 17.1569C29.8777 14.0327 29.8777 8.96734 33.0019 5.84314C36.1261 2.71895 41.1914 2.71895 44.3156 5.84315C47.4398 8.96734 47.4398 14.0327 44.3156 17.1569Z" stroke="url(#paint1_linear_552_72220)" stroke-width="7"/>
+                  <path d="M71.9476 44.7884C68.8234 47.9126 63.7581 47.9126 60.6339 44.7884C57.5097 41.6642 57.5097 36.5989 60.6339 33.4747C63.7581 30.3505 68.8234 30.3505 71.9476 33.4747C75.0718 36.5989 75.0718 41.6643 71.9476 44.7884Z" stroke="url(#paint2_linear_552_72220)" stroke-width="7"/>
+                  <path d="M17.1569 44.3155C14.0327 47.4397 8.96734 47.4397 5.84315 44.3155C2.71895 41.1913 2.71895 36.126 5.84315 33.0018C8.96734 29.8776 14.0327 29.8776 17.1569 33.0018C20.281 36.126 20.281 41.1914 17.1569 44.3155Z" stroke="url(#paint3_linear_552_72220)" stroke-width="7"/>
+                  <path d="M44.7887 71.9471C41.6645 75.0713 36.5992 75.0713 33.475 71.9471C30.3508 68.8229 30.3508 63.7576 33.475 60.6334C36.5992 57.5092 41.6645 57.5092 44.7887 60.6334C47.9129 63.7576 47.9129 68.8229 44.7887 71.9471Z" stroke="url(#paint4_linear_552_72220)" stroke-width="7"/>
+                  <defs>
+                  <linearGradient id="paint0_linear_552_72220" x1="47.7108" y1="100.751" x2="-9.78154" y2="82.0105" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_552_72220" x1="47.7108" y1="100.751" x2="-9.78154" y2="82.0105" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint2_linear_552_72220" x1="47.7108" y1="100.751" x2="-9.78154" y2="82.0105" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint3_linear_552_72220" x1="47.7108" y1="100.751" x2="-9.78154" y2="82.0105" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint4_linear_552_72220" x1="47.7108" y1="100.751" x2="-9.78154" y2="82.0105" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  </defs>
+                  </svg>
+
+                </div>
+              </div>
+              <div>
+                <h4 className="font-dmSans text-[clamp(1.125rem,2vw,1.5rem)] font-bold leading-7 text-charcoal whitespace-pre-line mb-3">Unique</h4>
+                <p className="font-dmSans text-lg leading-6 text-[#3C3C3C]">Designed from scratch.</p>
+              </div>
+            </div>
+
+            {/* Hand-coded */}
+            <div className="flex items-center gap-7">
+              <div className="bg-[#FFF8F0] rounded-tl-none rounded-3xl flex-shrink-0">
+                <div className="w-[80px] h-[80px] lg:w-[124px] lg:h-[124px] p-[16px] lg:p-[26px] flex items-center justify-center text-center">
+                  <svg width="75" height="74" viewBox="0 0 75 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.0623 9.47278C16.0623 13.1122 13.1119 16.0625 9.47253 16.0625C5.83313 16.0625 2.88281 13.1122 2.88281 9.47278C2.88281 5.83337 5.83313 2.88306 9.47254 2.88306C13.1119 2.88306 16.0623 5.83338 16.0623 9.47278Z" stroke="url(#paint0_linear_552_72227)" stroke-width="5.76601"/>
+                  <path d="M43.8055 9.47278C43.8055 13.1122 40.8552 16.0625 37.2158 16.0625C33.5764 16.0625 30.6261 13.1122 30.6261 9.47278C30.6261 5.83337 33.5764 2.88306 37.2158 2.88306C40.8552 2.88306 43.8055 5.83338 43.8055 9.47278Z" stroke="url(#paint1_linear_552_72227)" stroke-width="5.76601"/>
+                  <path d="M71.5488 9.47278C71.5488 13.1122 68.5985 16.0625 64.9591 16.0625C61.3197 16.0625 58.3694 13.1122 58.3694 9.47278C58.3694 5.83337 61.3197 2.88306 64.9591 2.88306C68.5985 2.88306 71.5488 5.83338 71.5488 9.47278Z" stroke="url(#paint2_linear_552_72227)" stroke-width="5.76601"/>
+                  <path d="M16.0623 36.9407C16.0623 40.5801 13.1119 43.5304 9.47253 43.5304C5.83313 43.5304 2.88281 40.5801 2.88281 36.9407C2.88281 33.3013 5.83313 30.351 9.47254 30.351C13.1119 30.351 16.0623 33.3013 16.0623 36.9407Z" stroke="url(#paint3_linear_552_72227)" stroke-width="5.76601"/>
+                  <path d="M43.8055 36.9407C43.8055 40.5801 40.8552 43.5304 37.2158 43.5304C33.5764 43.5304 30.6261 40.5801 30.6261 36.9407C30.6261 33.3013 33.5764 30.351 37.2158 30.351C40.8552 30.351 43.8055 33.3013 43.8055 36.9407Z" stroke="url(#paint4_linear_552_72227)" stroke-width="5.76601"/>
+                  <path d="M71.5488 36.9407C71.5488 40.5801 68.5985 43.5304 64.9591 43.5304C61.3197 43.5304 58.3694 40.5801 58.3694 36.9407C58.3694 33.3013 61.3197 30.351 64.9591 30.351C68.5985 30.351 71.5488 33.3013 71.5488 36.9407Z" stroke="url(#paint5_linear_552_72227)" stroke-width="5.76601"/>
+                  <path d="M16.0623 64.4086C16.0623 68.048 13.1119 70.9983 9.47253 70.9983C5.83313 70.9983 2.88281 68.048 2.88281 64.4086C2.88281 60.7692 5.83313 57.8189 9.47254 57.8189C13.1119 57.8189 16.0623 60.7692 16.0623 64.4086Z" stroke="url(#paint6_linear_552_72227)" stroke-width="5.76601"/>
+                  <path d="M43.8055 64.4086C43.8055 68.048 40.8552 70.9983 37.2158 70.9983C33.5764 70.9983 30.6261 68.048 30.6261 64.4086C30.6261 60.7692 33.5764 57.8189 37.2158 57.8189C40.8552 57.8189 43.8055 60.7692 43.8055 64.4086Z" stroke="url(#paint7_linear_552_72227)" stroke-width="5.76601"/>
+                  <path d="M71.5488 64.4086C71.5488 68.048 68.5985 70.9983 64.9591 70.9983C61.3197 70.9983 58.3694 68.048 58.3694 64.4086C58.3694 60.7692 61.3197 57.8189 64.9591 57.8189C68.5985 57.8189 71.5488 60.7692 71.5488 64.4086Z" stroke="url(#paint8_linear_552_72227)" stroke-width="5.76601"/>
+                  <defs>
+                  <linearGradient id="paint0_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint2_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint3_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint4_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint5_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint6_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint7_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint8_linear_552_72227" x1="45.7667" y1="96.4589" x2="-9.91333" y2="78.1628" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9517"/>
+                  <stop offset="1" stop-color="#26B3B8"/>
+                  </linearGradient>
+                  </defs>
+                  </svg>
+
+                </div>
+              </div>
+              <div>
+                <h4 className="font-dmSans text-[clamp(1.125rem,2vw,1.5rem)] font-bold leading-7 text-charcoal whitespace-pre-line mb-3">Hand-coded</h4>
+                <p className="font-dmSans text-lg leading-6 text-[#3C3C3C]">with clean, future-proof technology</p>
+              </div>
+            </div>
+
+            {/* Built collaboratively */}
+            <div className="flex items-center gap-7">
+              <div className="bg-[#FFF8F0] rounded-tl-none rounded-3xl flex-shrink-0">
+                <div className="w-[80px] h-[80px] lg:w-[124px] lg:h-[124px] p-[16px] lg:p-[26px] flex items-center justify-center text-center">
+                   <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M74.6748 38.6751C74.6748 42.0518 71.9374 44.7892 68.5607 44.7892C65.1839 44.7892 62.4465 42.0518 62.4465 38.6751C62.4465 35.2983 65.1839 32.5609 68.5607 32.5609C71.9374 32.5609 74.6748 35.2983 74.6748 38.6751Z" stroke="url(#paint0_linear_552_72235)" stroke-width="5.34986"/>
+                    <path d="M14.9031 38.6751C14.9031 42.0518 12.1657 44.7892 8.78893 44.7892C5.41219 44.7892 2.6748 42.0518 2.6748 38.6751C2.67481 35.2983 5.41219 32.5609 8.78893 32.5609C12.1657 32.5609 14.9031 35.2983 14.9031 38.6751Z" stroke="url(#paint1_linear_552_72235)" stroke-width="5.34986"/>
+                    <path d="M38.6766 74.675C35.2998 74.675 32.5624 71.9376 32.5624 68.5609C32.5624 65.1842 35.2998 62.4468 38.6766 62.4468C42.0533 62.4468 44.7907 65.1842 44.7907 68.5609C44.7907 71.9376 42.0533 74.675 38.6766 74.675Z" stroke="url(#paint2_linear_552_72235)" stroke-width="5.34986"/>
+                    <path d="M38.6766 14.9033C35.2998 14.9033 32.5624 12.1659 32.5624 8.78918C32.5624 5.41244 35.2998 2.67505 38.6766 2.67505C42.0533 2.67505 44.7907 5.41244 44.7907 8.78918C44.7907 12.1659 42.0533 14.9033 38.6766 14.9033Z" stroke="url(#paint3_linear_552_72235)" stroke-width="5.34986"/>
+                    <path d="M64.1301 64.1313C61.7424 66.519 57.8711 66.519 55.4834 64.1313C53.0957 61.7436 53.0957 57.8723 55.4834 55.4846C57.8711 53.0969 61.7424 53.0969 64.1301 55.4846C66.5178 57.8723 66.5178 61.7436 64.1301 64.1313Z" stroke="url(#paint4_linear_552_72235)" stroke-width="5.34986"/>
+                    <path d="M21.8651 21.8663C19.4774 24.254 15.6061 24.254 13.2184 21.8663C10.8307 19.4786 10.8307 15.6073 13.2184 13.2196C15.6061 10.8319 19.4774 10.8319 21.8651 13.2196C24.2528 15.6073 24.2528 19.4786 21.8651 21.8663Z" stroke="url(#paint5_linear_552_72235)" stroke-width="5.34986"/>
+                    <path d="M13.2197 64.1326C10.832 61.7449 10.832 57.8737 13.2197 55.4859C15.6074 53.0982 19.4787 53.0982 21.8664 55.4859C24.2541 57.8737 24.2541 61.7449 21.8664 64.1326C19.4787 66.5203 15.6074 66.5203 13.2197 64.1326Z" stroke="url(#paint6_linear_552_72235)" stroke-width="5.34986"/>
+                    <path d="M55.4847 21.8676C53.097 19.4799 53.097 15.6087 55.4847 13.2209C57.8724 10.8332 61.7437 10.8332 64.1314 13.221C66.5191 15.6087 66.5191 19.4799 64.1314 21.8676C61.7437 24.2553 57.8724 24.2553 55.4847 21.8676Z" stroke="url(#paint7_linear_552_72235)" stroke-width="5.34986"/>
+                    <path d="M44.5348 38.6751C44.5348 42.0518 41.7974 44.7892 38.4207 44.7892C35.0439 44.7892 32.3065 42.0518 32.3065 38.6751C32.3065 35.2983 35.0439 32.5609 38.4207 32.5609C41.7974 32.5609 44.5348 35.2983 44.5348 38.6751Z" stroke="url(#paint8_linear_552_72235)" stroke-width="5.34986"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    <linearGradient id="paint5_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    <linearGradient id="paint6_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    <linearGradient id="paint7_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    <linearGradient id="paint8_linear_552_72235" x1="47.6408" y1="101.588" x2="-10.8337" y2="82.5274" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF9517"/>
+                    <stop offset="1" stop-color="#26B3B8"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+
+                </div>
+              </div>
+              <div>
+                <h4 className="font-dmSans text-[clamp(1.125rem,2vw,1.5rem)] font-bold leading-7 text-charcoal whitespace-pre-line mb-3">Built collaboratively</h4>
+                <p className="font-dmSans text-lg leading-6 text-[#3C3C3C]">with you at the center</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Partner Description & Button */}
+        <div className="mb-16">
+          <h3 className="apple-reveal text-[32px] leading-[40px] font-bold text-[#012C5B]">With Amyma, you get a true partner</h3>
+          <p className="apple-reveal delay-200 font-dmSans text-[18px] leading-[24px] lg:text-[32px] lg:leading-[40px] text-[#7E7E7E] mb-6">
+            one that designs with precision and supports you long after launch.
+          </p>
+          <button className="apple-reveal delay-300 bg-[#002B5B] text-white px-8 py-3 rounded-full font-bold hover:bg-[#001f41] transition-all">
+            Explore our work
+          </button>
+        </div>
+
+        {/* Portfolio Cards */}
+        <div className="apple-reveal delay-400 grid grid-cols-1 md:grid-cols-3 gap-[28px]">
+          {/* Card 1 - Orange */}
+          <div className="rounded-[8px]">
+            <img 
+              src="/h-img04.png" 
+              alt="Mobile App Design" 
+              className=""
+            />
+          </div>
+
+          {/* Card 2 - Teal */}
+          <div className="rounded-[8px]">
+            <img 
+              src="/h-img05.png" 
+              alt="Web Development" 
+              className=""
+            />
+          </div>
+
+          {/* Card 3 - Dark Blue */}
+          <div className="rounded-[8px]">
+            <img 
+              src="/h-img06.png" 
+              alt="Institutional Portal" 
+              className=""
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>          
+              
+{/* <div className="absolute -top-4 -left-4">*/}
+     <section className="relative overflow-hidden bg-[#F6F6F6]">
+        {/* Background Grid Pattern - Đồng bộ với các section trước */}
+        <div className="pointer-events-none absolute inset-0 z-0 select-none opacity-40">
+          <svg className="h-full w-full" aria-hidden>
+            <defs>
+              <pattern id="how-we-work-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+                <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#EFEFEF" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#how-we-work-grid)" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+          
+          {/* Header Section */}
+          <div className="mb-10 lg:mb-12">
+            <div className="relative inline-block">
+              {/* Các dấu + trang trí */}
+              <span className="absolute -left-6 -top-4 text-primaryOrange text-xl font-bold">+</span>
+              <span className="absolute left-6 -top-4 text-primaryOrange text-xl font-bold">+</span>
+              <span className="absolute -left-6 top-4 text-primaryOrange text-xl font-bold">+</span>
+              
+              <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryBlue mb-3 tracking-[-2px]">
+                How We <span className="text-primaryOrange">Work</span>
+              </h2>
+            </div>
+            <p className="apple-reveal delay-200 max-w-[700px] font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] text-[#7E7E7E]">
+              A proven process that takes your project from vision to reality — with clarity, craft, and collaboration at every step.
+            </p>
+          </div>
+
+          {/* Steps Grid */}
+          <div className="apple-reveal delay-300 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16 relative">
+                    
+            {/* Step 01 */}
+            <div className="group relative flex flex-col items-start bg-white p-7 rounded-[32px] shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-gray-50 transition-all hover:shadow-xl">
+                <div className="mb-4 flex h-[69px] w-[69px] items-center justify-center rounded-tl-none rounded-2xl bg-[#FFF8F0]">
+                    <span className={`bg-gradient-to-r from-primaryTeal to-primaryOrange bg-clip-text text-transparent text-[20px] leading-[32px] lg:text-[32px] lg:leading-[40px] font-bold`}>01</span>
+                </div>
+                <h3 className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] font-bold text-charcoal whitespace-pre-line mb-3">Concept & Moodboard</h3>
+                <p className="font-dmSans text-sm leading-[20px] lg:text-lg lg:leading-6 text-[#3C3C3C]">
+                    Define visual direction & goals with client
+                </p>
+                {/* Mũi tên: Ẩn trên mobile và tablet, chỉ hiện trên desktop (lg) */}
+                <div className="rotate-90 md:rotate-0 flex absolute bottom-[-45px] left-1/2 -translate-x-1/2 z-20 
+                        md:bottom-auto md:top-1/2 md:right-[-48px] md:left-auto md:translate-x-0 md:-translate-y-1/2">
+                  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.586 24L13.414 26.828L26.828 13.414L13.414 0L10.586 2.828L19.172 11.414H0V15.414H19.172L10.586 24Z" fill="#FFD19A"/>
+                  </svg> 
+              </div>
+            </div>
+
+            {/* Step 02 */}
+            <div className="group relative flex flex-col items-start bg-white p-7 rounded-[32px] shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-gray-50 transition-all hover:shadow-xl">
+                <div className="mb-4 flex h-[69px] w-[69px] items-center justify-center rounded-tl-none rounded-2xl bg-[#FFF8F0]">
+                    <span className={`bg-gradient-to-r from-primaryTeal to-primaryOrange bg-clip-text text-transparent text-[20px] leading-[32px] lg:text-[32px] lg:leading-[40px] font-bold`}>02</span>
+                </div>
+                <h3 className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] font-bold text-charcoal whitespace-pre-line mb-3">Custom Design</h3>
+                <p className="font-dmSans text-sm leading-[20px] lg:text-lg lg:leading-6 text-[#3C3C3C]">
+                    Custom Design in Figma with UX/UI layouts tailored to user flows
+                </p>
+                <div className="rotate-90 md:rotate-0 flex absolute bottom-[-45px] left-1/2 -translate-x-1/2 z-20 
+                        md:bottom-auto md:top-1/2 md:right-[-48px] md:left-auto md:translate-x-0 md:-translate-y-1/2">
+                  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.586 24L13.414 26.828L26.828 13.414L13.414 0L10.586 2.828L19.172 11.414H0V15.414H19.172L10.586 24Z" fill="#FFD19A"/>
+                  </svg> 
+              </div>
+            </div>
+
+            {/* Step 03 */}
+            <div className="group relative flex flex-col items-start bg-white p-7 rounded-[32px] shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-gray-50 transition-all hover:shadow-xl">
+                <div className="mb-4 flex h-[69px] w-[69px] items-center justify-center rounded-tl-none rounded-2xl bg-[#FFF8F0]">
+                    <span className={`bg-gradient-to-r from-primaryTeal to-primaryOrange bg-clip-text text-transparent text-[20px] leading-[32px] lg:text-[32px] lg:leading-[40px] font-bold`}>03</span>
+                </div>
+                <h3 className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] font-bold text-charcoal whitespace-pre-line mb-3">Hand-Coded Frontend</h3>
+                <p className="font-dmSans text-sm leading-[20px] lg:text-lg lg:leading-6 text-[#3C3C3C]">
+                    CMS → Pixel-perfect HTML/CSS before CMS integration
+                </p>
+                <div className="rotate-90 md:rotate-0 flex md:hidden lg:flex absolute bottom-[-45px] left-1/2 -translate-x-1/2 z-20 
+                        md:bottom-auto md:top-1/2 md:right-[-48px] md:left-auto md:translate-x-0 md:-translate-y-1/2">
+                  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.586 24L13.414 26.828L26.828 13.414L13.414 0L10.586 2.828L19.172 11.414H0V15.414H19.172L10.586 24Z" fill="#FFD19A"/>
+                  </svg> 
+              </div>
+            </div>
+
+            {/* Step Optional: Xử lý tràn dòng */}
+            <div className="group relative flex flex-col items-start bg-white p-7 rounded-[32px] shadow-[0_4px_25px_rgba(0,0,0,0.03)] border border-gray-50 transition-all hover:shadow-xl md:col-span-3 lg:col-span-1">
+                <div className="mb-4 flex h-[69px] w-[69px] items-center justify-center rounded-tl-none rounded-2xl bg-[#FFF8F0]">
+                    <span className={`bg-gradient-to-r from-primaryTeal to-primaryOrange bg-clip-text text-transparent text-[20px] leading-[32px] lg:text-[32px] lg:leading-[40px] font-bold`}>//</span>
+                </div>
+                <h3 className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] font-bold text-charcoal whitespace-pre-line mb-3">Optional</h3>
+                <p className="font-dmSans text-sm leading-[20px] lg:text-lg lg:leading-6 text-[#3C3C3C]">
+                    Short behind-the-scenes video or scroll animation
+                </p>
+            </div>
+
+        </div>
+        </div>
+      </section>              
+{/* <div className="absolute -top-4 -left-4">*/}
+      <section className="relative overflow-hidden bg-white"> 
+        {/* Background Grid Pattern */}
+        <img className="absolute top-0 left-0 right-0 m-auto" alt="" src="/bg-section-02.svg"/>
+        <div className="pointer-events-none absolute inset-0 z-0 select-none opacity-30">
+          <svg className="h-full w-full" aria-hidden>
+            <defs>
+              <pattern id="gains-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+                <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#EAEAEA" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#gains-grid)" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[100px] xl:px-[var(--navX,108px)]">
+          
+          {/* Header Section */}
+          <div className="mb-5 lg:mb-10">
+            <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryBlue tracking-[-2px]">
+              What You Gain With Amyma
+            </h2>
+          </div>
+
+          {/* Benefits Grid - 4 Columns */}
+          <div className="apple-reveal delay-200 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            
+            {/* Card 1 - A premium design */}
+            <div className="p-[2px] rounded-[8px] bg-gradient-to-l from-[#D5D4D4] to-[#FF9517]">
+              <div className="group relative flex flex-col items-start bg-white p-7 rounded-[6px] h-full">
+                <div className="mb-6 flex h-[69px] w-20 items-center justify-center rounded-tl-none rounded-2xl bg-[#FFF8F0]">
+                  <div className="grid grid-cols-3 gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF8A00]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF8A00]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF8A00]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF8A00]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                  </div>
+                </div>
+                <h4 className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] font-bold text-charcoal mb-2">
+                  A premium design
+                </h4>
+                <p className="font-dmSans text-sm leading-[20px] lg:text-lg lg:leading-6 text-[#3C3C3C]">
+                  that builds instant trust.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 - Clear messaging */}
+            <div className="p-[2px] rounded-[8px] bg-gradient-to-l from-[#D5D4D4] to-[#FF9517]">
+              <div className="group relative flex flex-col items-start bg-white p-7 rounded-[6px] h-full">
+                <div className="mb-6 flex h-[69px] w-20 items-center justify-center rounded-tl-none rounded-2xl bg-[#FFF8F0]">
+                  <div className="relative w-10 h-10 flex items-center justify-center">
+                    <div className="absolute inset-0 border-[3px] border-[#FF8A00] rounded-full"></div>
+                    <div className="w-5 h-5 bg-[#00A99D] rounded-full"></div>
+                  </div>
+                </div>
+                <h4 className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] font-bold text-charcoal mb-2">
+                  Clear messaging
+                </h4>
+                <p className="font-dmSans text-sm leading-[20px] lg:text-lg lg:leading-6 text-[#3C3C3C]">
+                  that persuades and sells.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 - High-performance website */}
+            <div className="p-[2px] rounded-[8px] bg-gradient-to-l from-[#D5D4D4] to-[#FF9517]">
+              <div className="group relative flex flex-col items-start bg-white p-7 rounded-[6px] h-full">
+                <div className="mb-6 flex h-[69px] w-20 items-center justify-center rounded-tl-none rounded-2xl bg-[#FFF8F0]">
+                  <div className="flex flex-col gap-1.5 items-center">
+                    <div className="w-2.5 h-2.5 bg-[#00A99D] rounded-full"></div>
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 bg-[#FF8A00] rounded-full"></div>
+                      <div className="w-2.5 h-2.5 bg-[#00A99D] rounded-full"></div>
+                    </div>
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 bg-[#FF8A00] rounded-full"></div>
+                      <div className="w-2.5 h-2.5 bg-[#FF8A00] rounded-full"></div>
+                      <div className="w-2.5 h-2.5 bg-[#FF8A00] rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                <h4 className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] font-bold text-charcoal mb-2 whitespace-pre-line">
+                  A high-performance{"\n"}website
+                </h4>
+                <p className="font-dmSans text-sm leading-[20px] lg:text-lg lg:leading-6 text-[#3C3C3C]">
+                  that drives conversions
+                </p>
+              </div>
+            </div>
+
+            {/* Card 4 - Government Funding */}
+            <div className="p-[2px] rounded-[8px] bg-gradient-to-l from-[#D5D4D4] to-[#FF9517]"> 
+              <div className="group relative flex flex-col items-start bg-white p-7 rounded-[6px] h-full">
+                <div className="mb-6 flex h-[69px] w-20 items-center justify-center rounded-tl-none rounded-2xl bg-[#FFF8F0]">
+                  <div className="grid grid-cols-3 gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF8A00]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-primaryBlue"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF8A00]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF8A00]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-primaryBlue"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00A99D]"></div>
+                  </div>
+                </div>
+                <h4 className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-[28px] font-bold text-charcoal mb-2 whitespace-pre-line">
+                  Guidance on{"\n"}Government Funding
+                </h4>
+                <p className="font-dmSans text-sm leading-[20px] lg:text-lg lg:leading-6 text-[#3C3C3C]">
+                  Secure up to 70% government funding for your project
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>            
+{/* <div className="absolute -top-4 -left-4">*/}
+      <section className="relative overflow-hidden bg-[#0056B3] py-12"> 
+        <img className="absolute top-0 left-0 right-0 m-auto w-full h-full" alt="" src="/bg-section-03.svg"/>
+         <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
+          <div className="flex flex-col items-center gap-16 lg:flex-row">
+            
+            {/* Phone Mockups Section */}
+            <div className="relative w-full max-w-[350px] lg:w-1/2"> 
+              <img className="apple-reveal animate-hero-float" alt="" src="/h-img07.png"/>
+            </div>
+
+            {/* Content Section */}
+            <div className="w-full text-center lg:text-left">
+              <h2 className="apple-reveal delay-200 font-dmSans text-[32px] leading-[32px] lg:text-[48px] lg:leading-[48px] font-bold text-white tracking-[-2px]">
+                <span className="text-primaryOrange">Ready to</span> Start Your Project?
+              </h2>
+              
+              <p className="apple-reveal delay-300 font-dmSans text-lg leading-[24px] lg:text-2xl lg:leading-[28px] text-white">
+                Your vision deserves more than a template. Let's craft a tailor-made digital solution that truly works.
+              </p>
+
+              <div className="apple-reveal delay-400 mt-5 sm:flex flex-wrap items-center justify-center gap-6 lg:justify-start">
+                <button className="mb-6 sm:mb-0 w-full sm:w-auto rounded-full bg-[#001D3D] px-10 py-3 font-bold text-white transition-all hover:bg-[#002B5B] hover:shadow-xl active:scale-95">
+                  Get a free consultation
+                </button>
+                
+                <button className="w-full sm:w-auto rounded-full border-2 border-white px-10 py-3 font-bold text-white transition-all hover:bg-white hover:text-primaryBlue active:scale-95">
+                  Contact
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Các dấu + trang trí ở góc phải */}
+        <div className="absolute bottom-20 right-10 hidden lg:block">
+          <div className="grid grid-cols-2 gap-10 opacity-40">
+              <span className="text-white text-2xl font-bold">+</span>
+              <span className="text-white text-2xl font-bold">+</span>
+          </div>
+        </div>
+    </section>      
+
+{/* <div className="absolute -top-4 -left-4">*/}        
+       <section className="relative overflow-hidden bg-[#F6F6F6]">
+          {/* Background Grid Pattern cho toàn bộ section */}
+          <div className="pointer-events-none absolute inset-0 z-0 select-none opacity-30">
+            <svg className="h-full w-full" aria-hidden>
+              <defs>
+                <pattern id="results-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+                  <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#EAEAEA" strokeWidth="1" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#results-grid)" />
+            </svg>
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-5 py-16 sm:px-8 sm:pb-5 sm:py-20 lg:px-16 lg:pb-14 lg:py-[95px] xl:px-[var(--navX,108px)]">
+            
+            {/* Header Section */}
+            <div className="md:flex md:flex-row md:items-start justify-between mb-5 lg:mb-10">
+              <div className="max-w-[700px]">
+                <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryBlue tracking-[-2px] mb-4">
+                  Designs That Drive <span className="text-primaryOrange">Results</span>
+                </h2>
+                <p className="apple-reveal delay-200 max-w-[700px] font-dmSans text-lg leading-[24px] lg:text-2xl lg:leading-[28px] text-[#7E7E7E]">
+                  From local SMEs to institutions, we've crafted websites that tell stories, persuade customers, and deliver results.
+                </p>
+              </div>
+              <button className="apple-reveal delay-300 mt-8 md:mt-3 bg-primaryBlue text-white px-8 py-3 rounded-full font-bold hover:bg-[#001f41] transition-all shrink-0">
+                Explore our work
+              </button>
+            </div>
+
+            <p className="apple-reveal delay-400 font-dmSans text-lg leading-6 lg:text-2xl lg:leading-7 font-semibold text-charcoal mb-8">Our featured projects:</p>
+
+            {/* Featured Project Card */}
+            <div className="relative bg-white rounded-[8px] p-8 lg:py-14 lg:px-16 shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden">
+              
+              {/* Grid background riêng cho Card (như trong ảnh) */}
+              <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+                <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#results-grid)" /></svg>
+              </div>
+
+              <div className="relative z-10 flex flex-col-reverse gap-12 items-start lg:grid lg:grid-cols-2">
+                
+                {/* Project Info */}
+                <div className="flex flex-col items-start">
+                  <h3 className="apple-reveal font-dmSans text-[32px] leading-10 font-bold text-charcoal mb-2">Hallo Handwierk</h3>
+                  
+                  <div className="apple-reveal delay-200 flex gap-2 mb-4">
+                    <span className="bg-primaryOrange text-white px-3 py-1 rounded-md text-sm font-medium">Website</span>
+                    <span className="bg-[#F2F2F2] text-[#666] px-3 py-1 rounded-md text-sm font-medium">UX</span>
+                    <span className="bg-[#F2F2F2] text-[#666] px-3 py-1 rounded-md text-sm font-medium">UI</span>
+                  </div>
+
+                  <div className="apple-reveal delay-300 text-primaryOrange text-xl font-bold mb-4">
+                    +40% <span className="text-[#1C1C1C] font-normal">qualified leads in 3 months</span>
+                  </div>
+
+                  <div className="apple-reveal delay-300 space-y-4 font-dmSans text-base leading-5 text-[#7E7E7E] mb-10">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+                  </div>
+
+                  <button className="apple-reveal delay-400 bg-primaryBlue text-white px-8 py-3 rounded-full font-bold hover:shadow-lg transition-all">
+                    See the results
+                  </button>
+                </div>
+
+                {/* Project Image Mockups */}
+                <div className="relative flex flex-col gap-6 w-full">
+                  {/* Main Large Mockup */}
+                  <div className="rounded-lg overflow-hidden" style={{ background: "linear-gradient(0deg, rgba(185, 118, 226, 0.05), rgba(185, 118, 226, 0.05)), #FFFFFF" }}>
+                    <img src="/h-img08.png" alt="Hallo Handwierk App" className="w-full h-auto" />
+                  </div>
+                  
+                  {/* Small Gallery Mockups */}
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="rounded-lg overflow-hidden mb-4" style={{ background: "linear-gradient(0deg, rgba(185, 118, 226, 0.05), rgba(185, 118, 226, 0.05)), #FFFFFF" }}>
+                        <img src="/h-img09.png" alt="Screen 1" className="w-full h-auto" />
+                    </div>
+                    <div className="rounded-lg overflow-hidden mb-4" style={{ background: "linear-gradient(0deg, rgba(185, 118, 226, 0.05), rgba(185, 118, 226, 0.05)), #FFFFFF" }}>
+                        <img src="/h-img10.png" alt="Screen 2" className="w-full h-auto" />
+                    </div>
+                    <div className="rounded-lg overflow-hidden" style={{ background: "linear-gradient(0deg, rgba(185, 118, 226, 0.05), rgba(185, 118, 226, 0.05)), #FFFFFF" }}>
+                        <img src="/h-img11.png" alt="Screen 3" className="w-full h-auto" />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div> 
+          </div>
+
+          <div className="relative max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-16 pb-8 md:pb-16 lg:pb-[108px] xl:px-[var(--navX,108px)]">
+              <Swiper
+                modules={[Navigation, Pagination]}
+                spaceBetween={20} // Khoảng cách nhỏ cho mobile
+                slidesPerView={1} // Mặc định hiển thị 1 card trên mobile
+                centeredSlides={false}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 'auto', // Từ màn hình sm (tablet) trở lên mới dùng auto width
+                    spaceBetween: 30,
+                  },
+                }}
+                navigation={{
+                  nextEl: '.next-btn',
+                  prevEl: '.prev-btn',
+                }}
+                pagination={{
+                  el: '.custom-pagination',
+                  clickable: true,
+                }}
+                className="!overflow-visible"
+              >
+                {[1, 2, 3, 4].map((item) => (
+                  /* SỬA TẠI ĐÂY:
+                    - !w-full: Chiếm hết chiều ngang trên mobile.
+                    - sm:!w-[450px]: Giữ nguyên kích thước cũ cho tablet.
+                    - lg:!w-[550px]: Giữ nguyên kích thước cũ cho desktop.
+                  */
+                  <SwiperSlide key={item} className="!w-full sm:!w-[450px] lg:!w-[550px]">
+                    <div className="flex h-full overflow-hidden rounded-[8px] border border-gray-100 bg-white shadow-sm transition-all hover:shadow-xl">
+                      {/* Phần màu sắc bên trái card */}
+                      <div
+                        className={`relative flex w-[35%] lg:w-[30%] flex-col items-center justify-center p-6 text-white`}
+                        style={{
+                          background:
+                            item % 2 === 0
+                              ? 'linear-gradient(125.99deg, #FF8A00 0%, rgba(255, 138, 0, 0) 100%)'
+                              : 'linear-gradient(125.99deg, #0452A6 0%, rgba(4, 82, 166, 0) 100%)',
+                        }}
+                      >
+                        <img className="absolute top-0 left-0 w-full h-full object-cover" alt="" src="./bg-line-small.svg" />
+                        <img className="absolute top-0 left-0 w-full h-full object-cover" alt="" src="./dot.svg" />
+                        <span className="relative z-10 text-2xl lg:text-[40px] lg:leading-[48px] font-bold">+40%</span>
+                        <p className="relative z-10 mt-2 text-center text-[12px] lg:text-[16px] opacity-90 leading-[16px]">
+                          qualified leads
+                        </p>
+                      </div>
+
+                      {/* Nội dung bên phải card */}
+                      <div className="flex w-[65%] lg:w-[70%] flex-col justify-center p-4 lg:py-4 lg:px-7">
+                        <h4 className="text-lg lg:text-2xl font-bold text-primaryBlue truncate">Project Name</h4>
+                        <p className="text-xs lg:text-base text-gray-400">Industry Type</p>
+                        <div className="mt-2 flex flex-wrap gap-2 text-[12px] lg:text-base text-gray-600">
+                          <span>Website</span> <span className="text-primaryOrange">•</span> <span>UX/UI</span>
+                        </div>
+                        <button className="mt-4 lg:mt-6 flex items-center gap-2 font-bold text-primaryBlue hover:text-primaryOrange transition-colors text-lg">
+                          See the Impact <span>→</span>
+                        </button>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              {/* Navigation & Pagination: Đặt trong container để thẳng hàng với lề trái */}
+              <div className="mx-auto max-w-[1440px] mt-6 flex items-center justify-between">
+                <div className="custom-pagination flex gap-2"></div>
+                
+                <div className="flex gap-4">
+                  <button className="prev-btn flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 text-primaryBlue hover:bg-primaryBlue hover:text-white transition-all">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.25">
+                    <path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#012C5B"/>
+                    <path d="M24.7069 29.293L20.4139 25H29.9999V23H20.4139L24.7069 18.707L23.2929 17.293L16.5859 24L23.2929 30.707L24.7069 29.293Z" fill="white"/>
+                    </g>
+                    </svg> 
+                  </button>
+                  <button className="next-btn flex h-12 w-12 items-center justify-center rounded-full bg-primaryBlue text-white shadow-lg hover:bg-primaryOrange transition-all">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#012C5B"/>
+                    <path d="M23.293 29.293L24.707 30.707L31.414 24L24.707 17.293L23.293 18.707L27.586 23H18V25H27.586L23.293 29.293Z" fill="white"/>
+                    </svg> 
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <style jsx global>{`
+              .swiper-pagination-bullet {
+                width: 30px !important;
+                height: 4px !important;
+                border-radius: 2px !important;
+                background: #E2E2E2 !important;
+                opacity: 1 !important;
+              }
+              .swiper-pagination-bullet-active {
+                background: #002B5B !important;
+                width: 50px !important;
+              }
+            `}</style>     
+      </section>    
+      <section className="relative overflow-hidden bg-[#ffffff]">  
+        <img className="absolute top-0 left-0 w-full h-full" alt="" src="/bg-section-04.svg"/>
+        <div className="z-10 pointer-events-none absolute inset-0 select-none opacity-30">
+          <svg className="h-full w-full" aria-hidden>
+            <defs>
+              <pattern id="gains-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+                <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#EAEAEA" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#gains-grid)" />
+          </svg>
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 lg:px-16 xl:py-[100px] xl:px-[108px]">
+          
+          {/* 1. Sửa Tiêu đề (Services) - Cần đậm hơn và đúng size */}
+          <div className="mb-10">
+            <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryBlue tracking-[-0.02em]">
+              Services
+            </h2>
+          </div>
+
+          {/* Benefits Grid */}
+          <div className="apple-reveal delay-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            {/* Cấu trúc Card chung */}
+            {[
+              { 
+                title: "Web Design", 
+                desc: "Each layout is crafted to reflect your brand across all devices.", 
+                icon: "< >", 
+                bgColor: "bg-[#FFF8F0]", 
+                iconColor: "text-[#FF9517]",
+                borderColor: "border-orange-400/50"
+              },
+              { 
+                title: "Apps", 
+                desc: "Your ideas, turned into powerful apps that feel effortless to use.", 
+                icon: "}", 
+                bgColor: "bg-[#F0FBFA]", 
+                iconColor: "text-[#29B6B6]",
+                borderColor: "border-teal-400/30"
+              },
+              { 
+                title: "Digital Marketing", 
+                desc: "We help your brand get noticed with SEO, SEA and Social Ads.", 
+                icon: "*", 
+                bgColor: "bg-[#F0F7FF]", 
+                iconColor: "text-[#002B5B]",
+                borderColor: "border-blue-400/30"
+              },
+              { 
+                title: "Hosting", 
+                desc: "Reliable, secure hosting managed by our own team.", 
+                icon: "//", 
+                bgColor: "bg-[#F4F4F4]", 
+                iconColor: "text-[#7E7E7E]",
+                borderColor: "border-gray-400/50"
+              }
+            ].map((item, idx) => (
+              <div key={idx} className={`p-[1px] rounded-[8px] border ${item.borderColor} bg-white shadow-sm`}>
+                <div className="flex flex-col items-start p-7 h-full">
+                  
+                  {/* 2. Sửa Icon - Background bo góc nhẹ và màu sắc theo thiết kế */}
+                  <div className={`mb-4 flex h-[69px] w-[69px] items-center justify-center rounded-tl-none rounded-2xl ${item.bgColor}`}>
+                    <span className={`font-mono text-2xl font-bold ${item.iconColor}`}>
+                      {item.icon}
+                    </span>
+                  </div>
+
+                  <h4 className="font-dmSans text-2xl font-bold text-[#1C1C1C] mb-2">
+                    {item.title}
+                  </h4>
+                  
+                  <p className="font-dmSans text-lg leading-[24px] text-[#3C3C3C] mb-6">
+                    {item.desc}
+                  </p>
+
+                  {/* 3. Sửa "Explore more" - Căn lề dưới, icon mũi tên đúng kiểu */}
+                  <button className="mt-auto flex items-center gap-2 font-dmSans text-lg font-bold text-primaryBlue hover:text-primaryOrange transition-colors group">
+                    Explore more 
+                    <svg 
+                      className="w-5 h-5 transition-transform group-hover:translate-x-1" 
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>   
+
+      <section className="bg-[#F8F9FA] py-24 overflow-hidden">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-16 xl:px-[108px]">
+          <h2 className="apple-reveal mb-10 font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryBlue tracking-[-2px]">
+            What our clients <span className="text-primaryOrange">say about us</span>
+          </h2>
+
+          <div className="relative">
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={20} // Giảm khoảng cách giữa các slide trên mobile cho cân đối
+              slidesPerView={1} // Mặc định hiển thị 1 slide (cho mobile)
+              breakpoints={{
+                640: { 
+                  slidesPerView: 'auto', // Từ màn hình sm trở lên mới dùng chế độ auto width
+                  spaceBetween: 30 
+                },
+              }}
+              navigation={{ nextEl: '.next-t', prevEl: '.prev-t' }}
+              pagination={{ el: '.pagination-t', clickable: true }}
+              className="!overflow-visible"
+            >
+              {[
+                { color: '#00A99D', author: 'Gautam Kohli', date: 'on Feb 10, 2025' },
+                { color: '#0452A6', author: 'Gautam Kohli', date: 'Company Name' },
+                { color: '#FF8A00', author: 'Gautam Kohli', date: 'on Feb 10, 2025' },
+              ].map((item, idx) => (
+                /* SỬA TẠI ĐÂY: 
+                  - !w-full: Chiếm 100% màn hình trên mobile.
+                  - sm:!w-[400px]: Quay lại chiều rộng cố định từ màn hình sm (tablet) trở lên.
+                */
+                <SwiperSlide key={idx} className="!w-full sm:!w-[400px] lg:!w-[520px]">
+                  <div className="relative flex flex-col rounded-[8px] border border-gray-100 bg-white p-7 shadow-sm">
+                    
+                    {/* Lưới nền chìm */}
+                    <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(#ccc 1px, transparent 1px), linear-gradient(90deg, #ccc 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+
+                    <div className="relative z-10">
+                      {/* Dấu ngoặc kép mở */}
+                      <span style={{ color: item.color }} className="text-5xl font-serif leading-none">
+                        <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.70373 16.2961C3.28507 16.2961 2.1464 15.8107 1.28773 14.8401C0.429068 13.8321 -0.000265598 12.4881 -0.000265598 10.8081C-0.000265598 8.79206 0.653068 6.86939 1.95973 5.04006C3.2664 3.21072 5.24507 1.53072 7.89573 5.57899e-05L9.63173 2.01606C8.28773 3.13606 7.1304 4.20006 6.15973 5.20806C5.2264 6.17872 4.7224 7.05606 4.64773 7.84006L4.87173 8.00806C5.13307 7.78406 5.54374 7.67206 6.10374 7.67206C6.9624 7.67206 7.6904 8.04539 8.28773 8.79206C8.88507 9.53872 9.18373 10.5467 9.18373 11.8161C9.18373 13.1227 8.77307 14.2054 7.95173 15.0641C7.1304 15.8854 6.04773 16.2961 4.70373 16.2961ZM15.9037 16.2961C14.4851 16.2961 13.3464 15.8107 12.4877 14.8401C11.6291 13.8321 11.1997 12.4881 11.1997 10.8081C11.1997 8.79206 11.8531 6.86939 13.1597 5.04006C14.4664 3.21072 16.4451 1.53072 19.0957 5.57899e-05L20.8317 2.01606C19.4877 3.13606 18.3304 4.20006 17.3597 5.20806C16.4264 6.17872 15.9224 7.05606 15.8477 7.84006L16.0717 8.00806C16.3331 7.78406 16.7437 7.67206 17.3037 7.67206C18.1624 7.67206 18.8904 8.04539 19.4877 8.79206C20.0851 9.53872 20.3837 10.5467 20.3837 11.8161C20.3837 13.1227 19.9731 14.2054 19.1517 15.0641C18.3304 15.8854 17.2477 16.2961 15.9037 16.2961Z" fill="#26B3B8"/>
+                        </svg>
+                      </span> 
+                      <p className="my-2 font-dmSans text-[17px] leading-relaxed text-[#3C3C3C]">
+                        A customer testimonial that highlights features and answers potential customer doubts about your product or service. Showcase testimonials from a similar demographic to your customers.
+                      </p>
+
+                      {/* Dấu ngoặc kép đóng */}
+                      <div className="flex justify-end pr-4 mt-[-15px]">
+                        <span style={{ color: item.color }} className="text-5xl font-serif leading-none">
+                          <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.92847 5.57899e-05C6.34714 5.57899e-05 7.4858 0.504056 8.34447 1.51206C9.20314 2.48272 9.63247 3.80806 9.63247 5.48806C9.63247 7.50406 8.97914 9.42672 7.67247 11.2561C6.3658 13.0854 4.38714 14.7654 1.73647 16.2961L0.00046885 14.2801C1.34447 13.1601 2.48314 12.1147 3.41647 11.1441C4.38714 10.1361 4.9098 9.24006 4.98447 8.45606L4.76047 8.28806C4.49914 8.51206 4.08847 8.62406 3.52847 8.62406C2.6698 8.62406 1.9418 8.25072 1.34447 7.50406C0.747136 6.75739 0.448469 5.74939 0.448469 4.48006C0.448469 3.17339 0.859136 2.10939 1.68047 1.28806C2.5018 0.429389 3.58447 5.57899e-05 4.92847 5.57899e-05ZM16.1285 5.57899e-05C17.5471 5.57899e-05 18.6858 0.504056 19.5445 1.51206C20.4031 2.48272 20.8325 3.80806 20.8325 5.48806C20.8325 7.50406 20.1791 9.42672 18.8725 11.2561C17.5658 13.0854 15.5871 14.7654 12.9365 16.2961L11.2005 14.2801C12.5445 13.1601 13.6831 12.1147 14.6165 11.1441C15.5871 10.1361 16.1098 9.24006 16.1845 8.45606L15.9605 8.28806C15.6991 8.51206 15.2885 8.62406 14.7285 8.62406C13.8698 8.62406 13.1418 8.25072 12.5445 7.50406C11.9471 6.75739 11.6485 5.74939 11.6485 4.48006C11.6485 3.17339 12.0591 2.10939 12.8805 1.28806C13.7018 0.429389 14.7845 5.57899e-05 16.1285 5.57899e-05Z" fill="#26B3B8"/>
+                          </svg>
+                        </span>
+                      </div>
+
+                      <div className="mt-8 flex items-end justify-between border-t border-gray-50 pt-8">
+                        <div className="flex items-center gap-4">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-lg text-white font-bold text-xl" style={{ backgroundColor: item.color }}>
+                            G
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-primaryBlue">{item.author}</h4>
+                            <p className="text-xs text-gray-400">{item.date}</p>
+                          </div>
+                        </div>
+                        
+                        {/* Stars & Logo Google */}
+                        <div className="flex items-center gap-3">
+                          <div className="flex gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <svg key={i} width="16" height="16" viewBox="0 0 20 20" fill="#FFB800">
+                                <path d="M10 15.27L16.18 19l-1.64-7.03L19.72 7l-7.19-.61L10 0 7.47 6.39 0 7l5.18 4.97L3.82 19z" />
+                              </svg>
+                            ))}
+                          </div>
+                          <div className="flex h-8 w-8 items-center justify-center rounded-md border border-gray-100 shadow-sm bg-white">
+                            <svg width="18" height="18" viewBox="0 0 24 24">
+                              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Nav Buttons */}
+            <div className="mt-6 flex items-center justify-between">
+              <div className="pagination-t flex gap-2"></div>
+              <div className="flex gap-4">
+                <button className="prev-t flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 text-primaryBlue hover:bg-gray-100 transition-all">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.25">
+                  <path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#012C5B"/>
+                  <path d="M24.7069 29.293L20.4139 25H29.9999V23H20.4139L24.7069 18.707L23.2929 17.293L16.5859 24L23.2929 30.707L24.7069 29.293Z" fill="white"/>
+                  </g>
+                  </svg>
+                </button>
+                <button className="next-t flex h-12 w-12 items-center justify-center rounded-full bg-[#012C5B] text-white shadow-lg hover:bg-primaryOrange transition-all">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#012C5B"/>
+                  <path d="M23.293 29.293L24.707 30.707L31.414 24L24.707 17.293L23.293 18.707L27.586 23H18V25H27.586L23.293 29.293Z" fill="white"/>
+                  </svg>  
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <style jsx global>{`
+          .pagination-t .swiper-pagination-bullet {
+            width: 30px !important; height: 4px !important;
+            border-radius: 2px !important; background: #D1D5DB !important;
+            opacity: 1 !important; transition: all 0.3s ease;
+          }
+          .pagination-t .swiper-pagination-bullet-active {
+            background: #012C5B !important; width: 50px !important;
+          }
+        `}</style>
+
+          <div className="mx-auto max-w-[1440px] px-6 lg:px-16 xl:px-[108px] relative z-20 mt-14">
+            <div className="flex flex-wrap flex-col md:flex-row items-center justify-between gap-6 rounded-[24px] bg-white p-6">
+              
+              {/* Left: Google Logo & Rating */}
+              <div className="flex items-center gap-8">
+                <div className="flex items-center gap-2">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" 
+                    alt="Google" 
+                    className="h-7"
+                  />
+                  <span className="text-xl font-medium text-gray-700">Rating</span>
+                </div>
+                
+                <div className="flex items-center gap-3 border-l border-gray-200 pl-8">
+                  <span className="text-2xl font-bold text-gray-900">5.0</span>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} width="20" height="20" viewBox="0 0 20 20" fill="#FFB800">
+                        <path d="M10 15.27L16.18 19l-1.64-7.03L19.72 7l-7.19-.61L10 0 7.47 6.39 0 7l5.18 4.97L3.82 19z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span className="text-sm text-gray-400">420 reviews</span>
+                </div>
+              </div>
+
+              {/* Right: Buttons */}
+              <div className="flex flex-wrap items-center gap-4">
+                <button className="w-full sm:w-auto rounded-full border border-gray-300 px-8 py-3 font-bold text-primaryBlue hover:bg-gray-50 transition-all">
+                  See all reviews
+                </button>
+                <button className="w-full sm:w-auto rounded-full bg-[#012C5B] px-8 py-3 font-bold text-white shadow-md hover:bg-primaryOrange transition-all">
+                  Write a review
+                </button>
+              </div>
+            </div>
+          </div> 
+      </section>    
+
+  {/* aaaaaaaaaaaaaaaaa */}    
+      <section className="bg-[#F8F9FA] pt-14">
+      <div className="relative bg-[#0056B3] pb-[65px] py-14"> 
+        <img className="absolute top-0 left-0 right-0 m-auto w-full h-full" alt="" src="/bg-section-03.svg"/>
+         <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
+          <div className="flex flex-col items-center gap-10 md:flex-row">
+            
+            <div className="text-left max-w-[885px] w-full">
+              <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-white tracking-[-2px]">
+                Get Up to <span className="text-[#A6DCDD]">70% Off</span> Your Digital Project
+              </h2>
+              
+              <p className="apple-reveal delay-200 mt-3 max-w-2xl font-dmSans text-lg leading-[24px] lg:text-2xl lg:leading-[28px] text-blue-50/90">
+                Luxembourg offers generous support for digital projects. We'll guide you through every step to maximize your eligibility.
+              </p>
+
+              <div className="apple-reveal delay-300 mt-4 flex flex-wrap items-center gap-6 justify-start">
+                {/* Nút chính màu Navy đậm */}
+                <button className="w-full sm:w-auto rounded-full bg-[#001D3D] px-10 py-3 font-bold text-white transition-all hover:bg-[#002B5B] hover:shadow-xl active:scale-95">
+                  Book a Funding Consultation
+                </button>
+                
+                {/* Nút phụ Outline */}
+                <button className="w-full sm:w-auto rounded-full border-2 border-white px-12 py-[10px] font-bold text-white transition-all hover:bg-white hover:text-[#0452A6] active:scale-95">
+                  Learn More
+                </button>
+              </div>
+            </div>
+
+             <div className="relative w-full max-w-[260px] h-full mt-10 md:mt-[-180px]"> 
+              <img className="apple-reveal animate-hero-float w-[340px] h-[250px]" alt="" src="/h-img12.png"/>
+            </div>
+
+
+          </div>
+        </div>
+
+        {/* Các dấu + trang trí ở góc phải */}
+        <div className="absolute bottom-20 right-10 hidden lg:block">
+          <div className="grid grid-cols-2 gap-10 opacity-40">
+              <span className="text-white text-2xl font-bold">+</span>
+              <span className="text-white text-2xl font-bold">+</span>
+          </div>
+        </div>
+    </div>  
+    </section>
+    </div>  
+
+
+</>
+
   );
 }
 
