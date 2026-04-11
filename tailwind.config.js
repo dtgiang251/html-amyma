@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'custom': '980px',
+      },
       colors: {
         primaryBlue: "#012C5B",
         primaryBlueLight: "#F7FBFF",

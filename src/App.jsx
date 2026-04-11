@@ -6,6 +6,9 @@ import Problem from "./components/Problem";
 import Needs from "./components/Needs";
 import Contact from "./page/contact"; // Thêm dòng này
 
+import Blog from "./page/blog"; // Thêm dòng này
+import Word from "./page/word"; // Thêm dòng này
+
 function App() {
   return (
     <BrowserRouter>
@@ -27,6 +30,8 @@ function App() {
             }
           />
           <Route path="/page/contact" element={<Contact />} />
+          <Route path="/page/blog" element={<Blog />} />
+          <Route path="/page/word" element={<Word />} />
         </Routes>
       </div>
     </BrowserRouter>
