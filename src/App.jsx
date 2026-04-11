@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 
 import Blog from "./page/blog"; // Thêm dòng này
 import Word from "./page/word"; // Thêm dòng này
+import Single from "./page/single"; // Thêm dòng này
 
 function App() {
   return (
@@ -38,12 +39,11 @@ function App() {
           <Route path="/page/our-work" element={<OurWork />} />   
           <Route path="/page/our-work-project" element={<OurWorkProject />} />   
           <Route path="/page/contact" element={<Contact />} />
-<<<<<<< HEAD
           <Route path="/page/blog" element={<Blog />} />
           <Route path="/page/word" element={<Word />} />
 =======
           <Route path="/page/services" element={<Services />} />
->>>>>>> 0a4943bf06525703a8dc15fbf066e9ac7425e293
+          <Route path="/page/single" element={<Single />} />
         </Routes>
       </div>
     </BrowserRouter>
