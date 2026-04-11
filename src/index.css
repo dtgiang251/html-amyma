@@ -17,3 +17,50 @@ body {
 #root {
   min-height: 100vh;
 }
+/*******animate*********/ 
+  @keyframes floatEffect {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px); /* Chuyển động lên 5px */
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  /* 2. Áp dụng animation vào class */
+  .animate-hero-float {
+    animation: floatEffect 4s ease-in-out infinite; /* Chạy liên tục, mỗi vòng 4s */
+  }
+
+  /* Tùy chọn: Dừng animation khi người dùng hover chuột qua */
+  .animate-hero-float:hover {
+    animation-play-state: paused;
+  }
+
+  /***************************/
+  
+
+/* --- 2. Hiệu ứng Reveal khi Scroll (Cần class .active để chạy) --- */
+.apple-reveal {
+  opacity: 0;
+  transform: translateY(50px) scale(0.98);
+  transition: opacity 1.2s cubic-bezier(0.5, 0, 0, 1), 
+              transform 1.2s cubic-bezier(0.5, 0, 0, 1);
+  will-change: transform, opacity;
+}
+
+.apple-reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- 3. Các mức Delay để tạo nhịp điệu (Tùy chọn) --- */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+

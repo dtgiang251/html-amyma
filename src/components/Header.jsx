@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 const navItems = [
   { label: "About", active: true },
   { label: "Services", hasDropdown: true },
@@ -71,12 +73,14 @@ const LogoMark = () => (
 );
 
 const Header = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <header className="w-full">
       {/* Top banner */}
       <div className="bg-primaryBlue text-white">
-        <div className="mx-auto flex max-w-screen-2xl items-center gap-6 px-4 py-3 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
-          <div className="flex flex-1 items-center gap-3 text-base sm:text-lg lg:text-xl font-semibold">
+        <div className="mx-auto flex max-w-[1440px] items-center gap-6 px-6 py-2 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
+          <div className="flex items-center gap-3 text-base sm:text-lg lg:text-xl font-bold">
             <CoinIcon />
             <span className="leading-7 sm:leading-8">
               <span>Secure up to </span>
@@ -95,7 +99,7 @@ const Header = () => {
 
       {/* Main nav */}
       <nav className="shadow-subtle">
-        <div className="mx-auto flex max-w-screen-2xl items-center justify-between gap-4 px-4 py-4 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-6 py-[15px] sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
           <div className="flex items-center gap-10">
             <a className="flex items-center gap-2" href="/">
               <LogoMark />
@@ -108,7 +112,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item.label}
-                  className={`flex items-center gap-1 text-base font-semibold ${
+                  className={`flex items-center gap-1 text-lg leading-5 font-semibold ${
                     item.active ? "text-primaryTeal" : "text-charcoal"
                   }`}
                   type="button"
@@ -122,17 +126,17 @@ const Header = () => {
 
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="hidden sm:flex items-center gap-3">
-              <button className="rounded-pill border border-charcoal px-5 py-2 text-base font-semibold text-charcoal hover:bg-gray-50 transition-colors">
+              <button className="rounded-pill border border-charcoal px-5 py-[11px] text-lg font-semibold text-charcoal hover:bg-gray-50 transition-colors">
                 Contact us
               </button>
-              <button className="rounded-pill bg-primaryBlue px-5 py-2 text-base font-semibold text-white hover:bg-[#023772] transition-colors">
+              <button className="rounded-pill bg-primaryBlue px-5 py-[11px] text-lg font-semibold text-white hover:bg-[#023772] transition-colors">
                 Book a free consultation
               </button>
             </div>
 
             <button
               type="button"
-              className="flex items-center gap-1 text-base font-semibold text-charcoal"
+              className="flex items-center gap-1 text-lg font-semibold text-charcoal"
             >
               <span className="hidden sm:inline">EN</span>
               <ChevronDown className="w-5 h-5" />
@@ -143,6 +147,7 @@ const Header = () => {
               type="button"
               className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 lg:hidden"
               aria-label="Open menu"
+              onClick={() => setMobileOpen(true)}
             >
               <span className="sr-only">Toggle menu</span>
               <svg
@@ -163,6 +168,55 @@ const Header = () => {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <>
+        {/* Overlay */}
+        <div
+          className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+          onClick={() => setMobileOpen(false)}
+        />
+        {/* Slide-in menu */}
+        <div
+          className={`fixed top-0 right-0 z-50 h-full w-72 max-w-full bg-white shadow-lg transition-transform duration-300 ease-in-out flex flex-col
+            ${mobileOpen ? "translate-x-0" : "translate-x-full"}`}
+          style={{ willChange: "transform" }}
+        >
+          <div className="flex items-center justify-between px-4 py-4 border-b">
+            <span className="text-xl font-bold text-primaryBlue">Menu</span>
+            <button
+              type="button"
+              aria-label="Close menu"
+              className="p-2 rounded hover:bg-gray-100"
+              onClick={() => setMobileOpen(false)}
+            >
+              <svg className="h-6 w-6 text-primaryOrange" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M16.192 6.344 11.95 10.586 7.707 6.344 6.293 7.758 10.535 12l-4.242 4.242 1.414 1.414L11.95 13.414l4.242 4.242 1.414-1.414L13.364 12l4.242-4.242-1.414-1.414Z" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+          <nav className="flex flex-col gap-2 px-4 py-6">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href="#"
+                className="py-3 px-2 text-lg font-semibold text-charcoal rounded hover:bg-gray-100"
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+            <div className="mt-4 flex flex-col gap-2">
+              <button className="rounded-pill border border-charcoal px-5 py-[9px] text-lg font-semibold text-charcoal hover:bg-gray-50 transition-colors">
+                Contact us
+              </button>
+              <button className="rounded-pill border border-charcoal bg-primaryBlue px-5 py-[9px] text-lg font-semibold text-white hover:bg-[#023772] transition-colors">
+                Book a free consultation
+              </button>
+            </div>
+          </nav>
+        </div>
+      </>
     </header>
   );
 };
