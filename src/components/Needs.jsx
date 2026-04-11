@@ -158,7 +158,7 @@ export default function Needs() {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left: image */}
           <div className="hidden lg:block relative mx-auto w-full lg:col-span-5">
@@ -207,7 +207,7 @@ export default function Needs() {
     </section>
 {/* <div className="absolute -top-4 -left-4">*/}
     <section className="">
-      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
         
         {/* Header Section */}
         <div className="">
@@ -396,7 +396,7 @@ export default function Needs() {
         </div>
 
         {/* Partner Description & Button */}
-        <div className="mb-16">
+        <div className="mb-14">
           <h3 className="apple-reveal text-[32px] leading-[40px] font-bold text-[#012C5B]">With Amyma, you get a true partner</h3>
           <p className="apple-reveal delay-200 font-dmSans text-[18px] leading-[24px] lg:text-[32px] lg:leading-[40px] text-[#7E7E7E] mb-6">
             one that designs with precision and supports you long after launch.
@@ -453,7 +453,7 @@ export default function Needs() {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
           
           {/* Header Section */}
           <div className="mb-10 lg:mb-12">
@@ -556,7 +556,7 @@ export default function Needs() {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[100px] xl:px-[var(--navX,108px)]">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[100px] xl:px-[var(--navX,108px)]">
           
           {/* Header Section */}
           <div className="mb-5 lg:mb-10">
@@ -723,7 +723,7 @@ export default function Needs() {
             </svg>
           </div>
 
-          <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-5 py-16 sm:px-8 sm:pb-5 sm:py-20 lg:px-16 lg:pb-14 lg:py-[95px] xl:px-[var(--navX,108px)]">
+          <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-5 py-8 sm:px-8 md:py-16 lg:px-16 lg:pb-14 lg:py-[95px] xl:px-[var(--navX,108px)]">
             
             {/* Header Section */}
             <div className="md:flex md:flex-row md:items-start justify-between mb-5 lg:mb-10">
@@ -750,7 +750,7 @@ export default function Needs() {
                 <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#results-grid)" /></svg>
               </div>
 
-              <div className="relative z-10 flex flex-col-reverse gap-12 items-start lg:grid lg:grid-cols-2">
+              <div className="relative z-10 flex flex-col-reverse gap-4 md:gap-12 items-start lg:grid lg:grid-cols-2">
                 
                 {/* Project Info */}
                 <div className="flex flex-col items-start">
@@ -915,7 +915,7 @@ export default function Needs() {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 lg:px-16 xl:py-[100px] xl:px-[108px]">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 lg:px-16 xl:py-[100px] xl:px-[108px]">
           
           {/* 1. Sửa Tiêu đề (Services) - Cần đậm hơn và đúng size */}
           <div className="mb-10">
@@ -925,7 +925,7 @@ export default function Needs() {
           </div>
 
           {/* Benefits Grid */}
-          <div className="apple-reveal delay-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="apple-reveal delay-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ld:gap-8">
             
             {/* Cấu trúc Card chung */}
             {[
@@ -998,7 +998,7 @@ export default function Needs() {
         </div>
       </section>   
 
-      <section className="bg-[#F8F9FA] py-24 overflow-hidden">
+      <section className="bg-[#F8F9FA] py-8 md:py-16 lg:py-24 overflow-hidden">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16 xl:px-[108px]">
           <h2 className="apple-reveal mb-10 font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryBlue tracking-[-2px]">
             What our clients <span className="text-primaryOrange">say about us</span>

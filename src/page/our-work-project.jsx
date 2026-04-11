@@ -34,7 +34,7 @@ const OurWorkProject = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
           <img className="absolute top-0 left-0 right-0 m-auto" alt="" src="/bg-section-06.svg"/>
           <div className="relative z-10 grid items-start">
             <div className="flex flex-col gap-12">
@@ -60,7 +60,7 @@ const OurWorkProject = () => {
         </div>
       </section>  
       <section ref={revealRef2} className="relative overflow-hidden bg-white"> 
-        <div className="relative z-10 mx-auto py-16 sm:py-20">
+        <div className="relative z-10 mx-auto py-8 md:py-16 lg:py-20">
           <img className="absolute top-0 left-0 right-0 m-auto" alt="" src="/bg-section-05.svg"/>
           <div className="relative z-10 flex flex-col-reverse md:grid items-start gap-12 md:grid-cols-2 lg:gap-24">
             <div className="flex gap-12 bg-[#F6F6F6] py-14 flex-row-reverse w-[95%] md:w-full">
@@ -86,7 +86,7 @@ const OurWorkProject = () => {
         </div>
       </section>
       <section ref={revealRef3} className="relative bg-[#F6F6F6]"> 
-        <div className="relative z-10 mx-auto py-10 sm:py-14">
+        <div className="relative z-10 mx-auto py-8 lg:py-14">
           <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)] grid items-start gap-5 md:grid-cols-2 lg:gap-12">
             <div className="relative mx-auto w-full"> 
               <div className="relative w-full pr-5">
@@ -110,7 +110,7 @@ const OurWorkProject = () => {
         </div>
       </section>
 
-      <section ref={revealRef4} className="relative overflow-hidden bg-white py-16 lg:py-[108px]">
+      <section ref={revealRef4} className="relative overflow-hidden bg-white py-8 md:py-16 lg:py-[108px]">
         {/* Container 1440 của bạn */}
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
           
@@ -222,11 +222,11 @@ const OurWorkProject = () => {
     </section>
 
 
-    <section ref={revealRef6} className="w-full bg-[#F8F9FA] py-16 lg:py-24 px-6">
+    <section ref={revealRef6} className="w-full bg-[#F8F9FA] py-8 md:py-16 lg:py-[108px] px-6">
       <div className="mx-auto max-w-[1440px] xl:px-[108px]">
         
         {/* HEADER */}
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex flex-wrap justify-between items-end mb-12">
           <h2 className="apple-reveal text-[#1C1C1C] tracking-[-2px] text-[20px] leading-[32px] lg:text-[32px] lg:leading-[40px] font-bold">
             Related articles
           </h2>

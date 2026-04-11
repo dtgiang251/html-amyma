@@ -50,7 +50,7 @@ export default function Problem() {
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
         <img className="absolute top-0 left-0 right-0 m-auto" alt="" src="/bg-section-02.svg"/>
         <div className="relative z-10 grid items-start gap-12 md:grid-cols-2 lg:gap-12">
           {/* Left content */}
@@ -83,7 +83,7 @@ export default function Problem() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-pill border-2 border-primaryOrange bg-transparent">
                       <XIcon className="h-6 w-6 text-primaryOrange" />
                     </div>
-                    <div className="font-dmSans text-[clamp(1.05rem,2vw,1.5rem)] leading-7 text-black">
+                    <div className="font-dmSans text-[18px] leading-[24px] lg:text-[24px] lg:leading-7 text-black">
                       {label}
                     </div>
                   </div>

@@ -48,7 +48,7 @@ const Services = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
           <img className="absolute top-0 left-0 right-0 m-auto" alt="" src="/bg-section-05.svg"/>
           <div className="relative z-10 grid items-start gap-12 md:grid-cols-2 lg:gap-12">
             <div className="flex flex-col gap-12">
@@ -66,7 +66,7 @@ const Services = () => {
 
             <div className="relative mx-auto w-full max-w-[640px]"> 
               <div className="relative aspect-[5/4] w-full">
-                <img className="apple-reveal animate-hero-float" alt="" src="/h-img02.png"/>
+                <img className="apple-reveal animate-hero-float" alt="" src="/h-img20.png"/>
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@ const Services = () => {
         
 
         {/* NỘI DUNG CĂN GIỮA */}
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)] text-center">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)] text-center">
           <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-[#012C5B] mb-8">
             Templates won’t sell your story
           </h2>
@@ -116,7 +116,7 @@ const Services = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
           
           {/* Header Section */}
           <div className="mb-10 lg:mb-12">

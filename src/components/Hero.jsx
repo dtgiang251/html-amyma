@@ -59,7 +59,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-14 pt-5 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
+      <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-8 pt-5 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
         <div className="grid items-center grid-cols-12 md:gap-10">
           {/* Left Content */}
           <div className="pl-0 md:pl-10 col-span-12 md:col-span-6 relative z-10"> 

@@ -71,7 +71,7 @@ const FundingOverview = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
           <img className="absolute top-0 left-0 right-0 m-auto" alt="" src="/bg-section-05.svg"/>
           <div className="relative z-10 grid items-start gap-12 md:grid-cols-2 lg:gap-12">
             <div className="flex flex-col gap-12">
@@ -92,7 +92,7 @@ const FundingOverview = () => {
 
             <div className="relative mx-auto w-full max-w-[640px]"> 
               <div className="relative aspect-[5/4] w-full">
-                <img className="apple-reveal animate-hero-float" alt="" src="/h-img02.png"/>
+                <img className="apple-reveal animate-hero-float" alt="" src="/h-img20.png"/>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ const FundingOverview = () => {
           </svg>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]"
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]"
           style={{background: `url('../bg-section-08.svg') center center no-repeat`}} 
         >
           <div className="mb-10 lg:mb-12">
@@ -175,7 +175,7 @@ const FundingOverview = () => {
         </div>
       </section>
     {/* SECTION 3 - DÙNG revealRef3 */}
-      <section ref={revealRef3} className="relative py-20 px-4 bg-white overflow-hidden" 
+      <section ref={revealRef3} className="relative py-20 px-6 bg-white overflow-hidden" 
       style={{background: `url('../bg-section-07.svg') center center no-repeat`}} 
       > 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -252,7 +252,7 @@ const FundingOverview = () => {
       <section ref={revealRef4} className="relative overflow-hidden bg-[#F6F6F6]">
          
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]"
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]"
           style={{background: `url('../bg-section-08.svg') center center no-repeat`}} 
         >
           <div className="mb-10 lg:mb-12">

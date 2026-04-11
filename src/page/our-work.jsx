@@ -18,7 +18,7 @@ const OurWork = () => {
     <>
       
       {/* SECTION 2 - DÙNG revealRef2 */}
-      <section ref={revealRef1} className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]"    
+      <section ref={revealRef1} className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]"    
         style={{background: `url('../bg-section-09.svg') center center no-repeat`}} 
       >
          
@@ -34,7 +34,7 @@ const OurWork = () => {
           </div> 
       </section>
       <section ref={revealRef2} className="relative overflow-hidden bg-[#F6F6F6]"> 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
+        <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-8 sm:px-8 md:py-16 lg:px-16 lg:py-[108px] xl:px-[var(--navX,108px)]">
           
 
 

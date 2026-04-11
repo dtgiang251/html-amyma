@@ -9,10 +9,12 @@ import About from "./page/about";
 import FundingOverview from "./page/funding-overview";
 import OurWork from "./page/our-work";
 import OurWorkProject from "./page/our-work-project";
-import Services from "./page/services";
-import Footer from "./components/Footer";
+import OurWorkAppPage from "./page/our-work-app-page";
 
-import Blog from "./page/blog"; // Thêm dòng này
+import Services from "./page/services";
+import Blog from "./page/blog";
+import Footer from "./components/Footer";
+ 
 import Word from "./page/word"; // Thêm dòng này
 import Single from "./page/single"; // Thêm dòng này
 
@@ -38,12 +40,11 @@ function App() {
           <Route path="/page/funding-overview" element={<FundingOverview />} />
           <Route path="/page/our-work" element={<OurWork />} />   
           <Route path="/page/our-work-project" element={<OurWorkProject />} />   
+          <Route path="/page/our-work-app-page" element={<OurWorkAppPage />} />   
           <Route path="/page/contact" element={<Contact />} />
           <Route path="/page/blog" element={<Blog />} />
-          <Route path="/page/word" element={<Word />} />
-=======
+          <Route path="/page/word" element={<Word />} /> 
           <Route path="/page/services" element={<Services />} />
-          <Route path="/page/single" element={<Single />} />
         </Routes>
       </div>
     </BrowserRouter>
