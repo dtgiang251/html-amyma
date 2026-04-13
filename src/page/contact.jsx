@@ -1,7 +1,19 @@
-import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
 const Contact = () => {
+  const logos = [
+    "/h-adv01.png",
+    "/h-adv02.png",
+    "/h-adv03.png",
+    "/h-adv04.png",
+    "/h-adv05.png",
+    "/h-adv06.png",
+  ];
   return (
-  <div className="py-12 md:py-24 relative">
+  <div className="pb-0 py-12 md:pb-0 md:py-24 relative">
     {/* Background map */}
     <div className="absolute left-0 top-0 right-0 w-full h-full">
       <img className="w-full" src="/ct.png" alt="" />
@@ -127,27 +139,63 @@ const Contact = () => {
     <div className="relative w-full mt-[-80px]">
       <iframe className="w-full h-[380px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2582.8167558718987!2d6.290464076720026!3d49.65775187145165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47954365dab05f9f%3A0x8278f10772a5e26d!2s14%20Rue%20Strachen%2C%206933%20Mensdorf%20Betzdorf%2C%20Luxembourg!5e0!3m2!1sen!2s!4v1775443824944!5m2!1sen!2s"></iframe>
     </div>
-    <div className="relative bg-white py-6">
-      <div className="flex gap-6 max-w-[1264px] m-auto px-5">
-        <div className="w-full w-[200px]">
-          <div className="font-fustat text-[18px] font-bold leading-5 text-primaryOrange">
-            Trusted
-          </div>
-          <div className="mt-2 font-dmSans text-[16px] leading-6 text-[#7E7E7E]">
-            by some of Luxembourg's <br/> finest companies
-          </div>
-        </div>
+     
 
-        <div className="flex overflow-hidden gap-8">
-            <img className="w-full h-[50px]" src="https://api.builder.io/api/v1/image/assets/TEMP/017f2a713e3e4a1d7bc4b05c8d7e33a8d37aa02c?width=276" alt="" />
-            <img className="w-full h-[50px]" src="https://api.builder.io/api/v1/image/assets/TEMP/f3f9c5f541f81fb0a3fafb21bb0f2d32a7caa5ba?width=276" alt="" />
-            <img className="w-full h-[50px]" src="https://api.builder.io/api/v1/image/assets/TEMP/223d979cf3a3b87cffbf6bb33f69e558befb6a1e?width=276" alt="" />
-            <img className="w-full h-[50px]" src="/logo1.png" alt="" />
-            <img className="w-full h-[50px]" src="/logo2.png" alt="" />
-            <img className="w-full h-[50px]" src="/logo3.png" alt="" />
+    <section className="bg-white">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
+        <div className="border-y border-[#D5D4D4] py-4 lg:py-6">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
+            {/* Nội dung bên trái */}
+            <div className="w-full lg:max-w-[260px] shrink-0">
+              <div className="font-fustat text-[18px] font-bold leading-7 text-primaryOrange">
+                Trusted
+              </div>
+              <div className="font-dmSans text-[16px] leading-6 text-[#7E7E7E]">
+                by some of Luxembourg&apos;s finest companies
+              </div>
+            </div>
+
+            {/* Slider Logo */}
+            <div className="w-full flex-1 overflow-hidden">
+              <Swiper
+                modules={[Autoplay]}
+                spaceBetween={40} // Khoảng cách giữa các logo
+                slidesPerView="auto" // Tự động khớp theo chiều rộng của slide
+                loop={true}
+                speed={5000} // Tốc độ trôi (càng lớn càng chậm)
+                autoplay={{
+                  delay: 0,
+                  disableOnInteraction: false,
+                }}
+                allowTouchMove={false} // Chế độ marquee thường không cần kéo tay
+                className="logo-swiper-linear"
+              >
+                {logos.map((src, index) => (
+                  <SwiperSlide key={index} className="!w-auto flex items-center">
+                    <img
+                      src={src}
+                      alt={`Partner ${index}`}
+                      className="h-[35px] lg:h-[50px] w-auto shrink-0 object-contain opacity-80 grayscale transition-all hover:grayscale-0 hover:opacity-100"
+                      loading="lazy"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* CSS bắt buộc để tạo hiệu ứng trôi mượt (Linear) */}
+      <style jsx global>{`
+        .logo-swiper-linear .swiper-wrapper {
+          transition-timing-function: linear !important;
+        }
+      `}</style>
+    </section>
+
+
+
   </div>
 );
 };

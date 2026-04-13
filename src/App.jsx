@@ -32,7 +32,7 @@ function App() {
                 <Logos />
                 <Problem />
                 <Needs />
-                <Footer />
+                
               </>
             }
           />
@@ -45,7 +45,9 @@ function App() {
           <Route path="/page/blog" element={<Blog />} />
           <Route path="/page/word" element={<Word />} /> 
           <Route path="/page/services" element={<Services />} />
+          <Route path="/page/single" element={<Single />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

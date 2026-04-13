@@ -57,12 +57,10 @@ export default function Problem() {
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-3">
-                <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold tracking-[-2px] text-primaryBlue animate-hero-title">
-                  Templates Don&apos;t Sell.
-                </h2>
-                <h3 className="apple-reveal delay-200 font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-primaryOrange -mt-2.5 tracking-[-2px] animate-hero-title">
-                  Custom Design Does.
-                </h3>
+                
+                <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold tracking-[-2px] text-primaryBlue">
+                  Templates Don&apos;t Sell. <span className="text-primaryOrange">Custom Design Does.</span>
+                </h2> 
               </div>
               <p className="apple-reveal delay-400 lg:max-w-[44ch] font-dmSans text-[clamp(1.125rem,2vw,1.5rem)] leading-7 text-charcoalMedium">
                 Too many businesses settle for cookie-cutter websites that look

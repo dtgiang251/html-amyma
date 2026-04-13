@@ -678,7 +678,7 @@ export default function Needs() {
 
             {/* Content Section */}
             <div className="w-full text-center lg:text-left">
-              <h2 className="apple-reveal delay-200 font-dmSans text-[32px] leading-[32px] lg:text-[48px] lg:leading-[48px] font-bold text-white tracking-[-2px]">
+              <h2 className="mb-6 apple-reveal delay-200 font-dmSans text-[32px] leading-[32px] lg:text-[48px] lg:leading-[48px] font-bold text-white tracking-[-2px]">
                 <span className="text-primaryOrange">Ready to</span> Start Your Project?
               </h2>
               
@@ -1171,7 +1171,7 @@ export default function Needs() {
           <div className="flex flex-col items-center gap-10 md:flex-row">
             
             <div className="text-left max-w-[885px] w-full">
-              <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-white tracking-[-2px]">
+              <h2 className="mb-6 apple-reveal font-dmSans text-[32px] leading-[32px] lg:text-[48px] lg:leading-[48px] font-bold text-white tracking-[-2px]">
                 Get Up to <span className="text-[#A6DCDD]">70% Off</span> Your Digital Project
               </h2>
               

@@ -80,7 +80,7 @@ const Services = () => {
           style={{background: "url('../bg-section-10.svg') center center no-repeat"}}
         />
         <div 
-          className="absolute inset-0 z-0 pointer-events-none opacity-10" // Dùng opacity-10 của Tailwind cho chuẩn
+          className="absolute inset-0 z-0 pointer-events-none " // Dùng opacity-10 của Tailwind cho chuẩn
           style={{
             backgroundImage: "url('../h-img17.png')",
             backgroundPosition: 'center',

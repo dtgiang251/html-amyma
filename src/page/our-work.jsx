@@ -13,6 +13,7 @@ import 'swiper/css';
 const OurWork = () => { 
   const revealRef1 = useReveal();  
   const revealRef2 = useReveal();  
+  const revealRef3 = useReveal();  
  
   return (
     <>
@@ -380,6 +381,48 @@ const OurWork = () => {
             
         </div>
       </section>
+      <section ref={revealRef3} className="relative overflow-hidden bg-[#0056B3] py-12"> 
+        <img className="absolute top-0 left-0 right-0 m-auto w-full h-full" alt="" src="/bg-section-03.svg"/>
+         <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
+          <div className="flex flex-col items-center gap-16 lg:flex-row">
+            
+            {/* Phone Mockups Section */}
+            <div className="relative w-full max-w-[350px] lg:w-1/2"> 
+              <img className="apple-reveal animate-hero-float" alt="" src="/h-img07.png"/>
+            </div>
+
+            {/* Content Section */}
+            <div className="w-full text-center lg:text-left">
+              <h2 className="apple-reveal delay-200 font-dmSans text-[32px] leading-[32px] lg:text-[48px] lg:leading-[48px] font-bold text-white tracking-[-2px]">
+                <span className="text-primaryOrange">Ready to</span> Start Your Project?
+              </h2>
+              
+              <p className="apple-reveal delay-300 font-dmSans text-lg leading-[24px] lg:text-2xl lg:leading-[28px] text-white">
+                Your vision deserves more than a template. Let's craft a tailor-made digital solution that truly works.
+              </p>
+
+              <div className="apple-reveal delay-400 mt-5 sm:flex flex-wrap items-center justify-center gap-6 lg:justify-start">
+                <button className="mb-6 sm:mb-0 w-full sm:w-auto rounded-full bg-[#001D3D] px-10 py-3 font-bold text-white transition-all hover:bg-[#002B5B] hover:shadow-xl active:scale-95">
+                  Get a free consultation
+                </button>
+                
+                <button className="w-full sm:w-auto rounded-full border-2 border-white px-10 py-3 font-bold text-white transition-all hover:bg-white hover:text-primaryBlue active:scale-95">
+                  Contact
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Các dấu + trang trí ở góc phải */}
+        <div className="absolute bottom-20 right-10 hidden lg:block">
+          <div className="grid grid-cols-2 gap-10 opacity-40">
+              <span className="text-white text-2xl font-bold">+</span>
+              <span className="text-white text-2xl font-bold">+</span>
+          </div>
+        </div>
+    </section> 
     
     </>
   );
