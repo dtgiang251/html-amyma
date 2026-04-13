@@ -1,7 +1,7 @@
-import { useId } from "react";
+import { useId, useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import CSS (Bắt buộc phải có để slider hiển thị đúng)
 import 'swiper/css';
@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 
 import 'swiper/css';
 const OurWorkProject = () => { 
+  const [swiperInstance, setSwiperInstance] = useState(null);
   const revealRef1 = useReveal();  
   const revealRef2 = useReveal();  
   const revealRef3 = useReveal();  
@@ -415,50 +416,51 @@ const OurWorkProject = () => {
         </div>
       </section>
       <section ref={revealRef7} className="bg-[#F8F9FA] pt-14">
-        <div className="relative bg-[#0056B3] pb-[65px] py-14"> 
-          <img className="absolute top-0 left-0 right-0 m-auto w-full h-full" alt="" src="/bg-section-03.svg"/>
-          <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
-            <div className="flex flex-col items-center gap-10 md:flex-row">
+      <div className="relative bg-[#0056B3] pb-[65px] py-14"> 
+        <img className="absolute top-0 left-0 right-0 m-auto w-full h-full" alt="" src="/bg-section-03.svg"/>
+         <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
+          <div className="flex flex-col items-center gap-10 md:flex-row">
+            
+            <div className="text-left max-w-[985px] w-full">
+              <h2 className="mb-6 apple-reveal font-dmSans text-[32px] leading-[32px] lg:text-[48px] lg:leading-[48px] font-bold text-white tracking-[-2px]">
+                Get Up to <span className="text-[#A6DCDD]">70% Off</span> Your Digital Project
+              </h2>
               
-              <div className="text-left max-w-[885px] w-full">
-                <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-white tracking-[-2px]">
-                  Ready to  <span className="text-[#A6DCDD]">Start Your Project?</span> 
-                </h2>
+              <p className="apple-reveal delay-200 mt-3 max-w-2xl font-dmSans text-lg leading-[24px] lg:text-2xl lg:leading-[28px] text-blue-50/90">
+                Luxembourg offers generous support for digital projects. We'll guide you through every step to maximize your eligibility.
+              </p>
+
+              <div className="apple-reveal delay-300 mt-4 flex flex-wrap items-center gap-6 justify-start">
+                {/* Nút chính màu Navy đậm */}
+                <button className="w-full sm:w-auto rounded-full bg-[#001D3D] px-10 py-3 font-bold text-white transition-all hover:bg-[#002B5B] hover:shadow-xl active:scale-95">
+                  Book a Funding Consultation
+                </button>
                 
-                <p className="apple-reveal delay-200 mt-3 max-w-2xl font-dmSans text-lg leading-[24px] lg:text-2xl lg:leading-[28px] text-blue-50/90">
-                  We help you unlock government funding so your bespoke website or app can become a reality — with guidance from start to finish.
-                </p>
-
-                <div className="apple-reveal delay-300 mt-4 flex flex-wrap items-center gap-6 justify-start">
-                  {/* Nút chính màu Navy đậm */}
-                  <button className="w-full sm:w-auto rounded-full bg-[#001D3D] px-10 py-3 font-bold text-white transition-all hover:bg-[#002B5B] hover:shadow-xl active:scale-95">
-                    Book a Funding Consultation
-                  </button>
-                  
-                  {/* Nút phụ Outline */}
-                  <button className="w-full sm:w-auto rounded-full border-2 border-white px-12 py-[10px] font-bold text-white transition-all hover:bg-white hover:text-[#0452A6] active:scale-95">
-                    Learn More
-                  </button>
-                </div>
+                {/* Nút phụ Outline */}
+                <button className="w-full sm:w-auto rounded-full border-2 border-white px-12 py-[10px] font-bold text-white transition-all hover:bg-white hover:text-[#0452A6] active:scale-95">
+                  Learn More
+                </button>
               </div>
-
-              <div className="relative w-full max-w-[260px] h-full mt-10 md:mt-[-180px]"> 
-                <img className="apple-reveal animate-hero-float w-[340px] h-[250px]" alt="" src="/h-img12.png"/>
-              </div>
-
-
             </div>
-          </div>
 
-          {/* Các dấu + trang trí ở góc phải */}
-          <div className="absolute bottom-20 right-10 hidden lg:block">
-            <div className="grid grid-cols-2 gap-10 opacity-40">
-                <span className="text-white text-2xl font-bold">+</span>
-                <span className="text-white text-2xl font-bold">+</span>
+             {/* TĂNG max-w Ở ĐÂY (giữ nguyên container) */}
+             <div className="relative w-full max-w-[350px] h-full mt-10 md:mt-[-120px]"> 
+              {/* ĐỔI THÀNH w-full h-auto ĐỂ ẢNH TO THEO CONTAINER */}
+              <img className="apple-reveal animate-hero-float w-full h-auto object-contain" alt="Mockup" src="/h-img12.png"/>
             </div>
+
           </div>
-      </div>  
-      </section>
+        </div>
+
+        {/* Các dấu + trang trí ở góc phải */}
+        <div className="absolute bottom-20 right-10 hidden lg:block">
+          <div className="grid grid-cols-2 gap-10 opacity-40">
+              <span className="text-white text-2xl font-bold">+</span>
+              <span className="text-white text-2xl font-bold">+</span>
+          </div>
+        </div>
+    </div>  
+    </section>    
     </>
   );
 }; 

@@ -1,7 +1,7 @@
-import { useId } from "react";
+import { useId, useState } from "react";
 import { useReveal } from "../hooks/useReveal";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import CSS (Bắt buộc phải có để slider hiển thị đúng)
 import 'swiper/css';
@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 
 import 'swiper/css';
 const OurWorkAppPage = () => { 
+  const [swiperInstance, setSwiperInstance] = useState(null);
   const revealRef1 = useReveal();  
   const revealRef2 = useReveal();  
   const revealRef3 = useReveal();  
@@ -189,61 +190,77 @@ const OurWorkAppPage = () => {
       </section>
 
       <section ref={revealRef5}  className="w-full bg-white py-16 lg:py-24 px-6">
-      <div className="mx-auto max-w-[1440px] xl:px-[108px]">
-        
-        {/* TESTIMONIAL BOX */}
-        <div className="relative w-full bg-[#00595C] rounded-[16px] overflow-hidden pt-14 py-10 text-center">
-          {/* Background Grid Pattern (Giả lập bằng CSS hoặc SVG) */} 
-           
-          <img className="absolute top-0 left-0" alt="" src="../bg-section-03.svg"/> 
-           
+        <div className="mx-auto max-w-[1440px] xl:px-[108px]">
+          
+          {/* TESTIMONIAL BOX */}
+          <div className="relative w-full bg-[#00595C] rounded-[16px] overflow-hidden py-4">
+              <img className="absolute top-0 left-0 w-full h-full object-cover opacity-20" alt="" src="../bg-section-03.svg" />
 
-          <div className="relative z-10 flex flex-col items-center mx-auto px-6 max-w-[860px]"> 
-            {/* Quote Icon */}
-            <div className="relative">
-                <div className="apple-reveal absolute top-[-20px] left-[-20px]">
-                  <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.70373 16.2961C3.28507 16.2961 2.1464 15.8107 1.28773 14.8401C0.429068 13.8321 -0.000265598 12.4881 -0.000265598 10.8081C-0.000265598 8.79206 0.653068 6.86939 1.95973 5.04006C3.2664 3.21072 5.24507 1.53072 7.89573 5.57899e-05L9.63173 2.01606C8.28773 3.13606 7.1304 4.20006 6.15973 5.20806C5.2264 6.17872 4.7224 7.05606 4.64773 7.84006L4.87173 8.00806C5.13307 7.78406 5.54374 7.67206 6.10374 7.67206C6.9624 7.67206 7.6904 8.04539 8.28773 8.79206C8.88507 9.53872 9.18373 10.5467 9.18373 11.8161C9.18373 13.1227 8.77307 14.2054 7.95173 15.0641C7.1304 15.8854 6.04773 16.2961 4.70373 16.2961ZM15.9037 16.2961C14.4851 16.2961 13.3464 15.8107 12.4877 14.8401C11.6291 13.8321 11.1997 12.4881 11.1997 10.8081C11.1997 8.79206 11.8531 6.86939 13.1597 5.04006C14.4664 3.21072 16.4451 1.53072 19.0957 5.57899e-05L20.8317 2.01606C19.4877 3.13606 18.3304 4.20006 17.3597 5.20806C16.4264 6.17872 15.9224 7.05606 15.8477 7.84006L16.0717 8.00806C16.3331 7.78406 16.7437 7.67206 17.3037 7.67206C18.1624 7.67206 18.8904 8.04539 19.4877 8.79206C20.0851 9.53872 20.3837 10.5467 20.3837 11.8161C20.3837 13.1227 19.9731 14.2054 19.1517 15.0641C18.3304 15.8854 17.2477 16.2961 15.9037 16.2961Z" fill="#26B3B8"/>
-                  </svg> 
-                </div> 
-                {/* Testimonial Text */}
-                <blockquote className="apple-reveal text-white text-lg leading-[24px] md:text-2xl md:leading-[28px] font-bold mb-10">
-                  A customer testimonial that highlights features and answers potential customer doubts about your product or service. Showcase testimonials from a similar demographic to your customers.
-                </blockquote>
-                <div className="apple-reveal absolute bottom-[40px] right-[-20px]">
-                  <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.92847 5.57899e-05C6.34714 5.57899e-05 7.4858 0.504056 8.34447 1.51206C9.20314 2.48272 9.63247 3.80806 9.63247 5.48806C9.63247 7.50406 8.97914 9.42672 7.67247 11.2561C6.3658 13.0854 4.38714 14.7654 1.73647 16.2961L0.00046885 14.2801C1.34447 13.1601 2.48314 12.1147 3.41647 11.1441C4.38714 10.1361 4.9098 9.24006 4.98447 8.45606L4.76047 8.28806C4.49914 8.51206 4.08847 8.62406 3.52847 8.62406C2.6698 8.62406 1.9418 8.25072 1.34447 7.50406C0.747136 6.75739 0.448469 5.74939 0.448469 4.48006C0.448469 3.17339 0.859136 2.10939 1.68047 1.28806C2.5018 0.429389 3.58447 5.57899e-05 4.92847 5.57899e-05ZM16.1285 5.57899e-05C17.5471 5.57899e-05 18.6858 0.504056 19.5445 1.51206C20.4031 2.48272 20.8325 3.80806 20.8325 5.48806C20.8325 7.50406 20.1791 9.42672 18.8725 11.2561C17.5658 13.0854 15.5871 14.7654 12.9365 16.2961L11.2005 14.2801C12.5445 13.1601 13.6831 12.1147 14.6165 11.1441C15.5871 10.1361 16.1098 9.24006 16.1845 8.45606L15.9605 8.28806C15.6991 8.51206 15.2885 8.62406 14.7285 8.62406C13.8698 8.62406 13.1418 8.25072 12.5445 7.50406C11.9471 6.75739 11.6485 5.74939 11.6485 4.48006C11.6485 3.17339 12.0591 2.10939 12.8805 1.28806C13.7018 0.429389 14.7845 5.57899e-05 16.1285 5.57899e-05Z" fill="#26B3B8"/>
-                  </svg> 
-                </div>
+              <Swiper
+                //modules={[Pagination, Autoplay]}
+                onSwiper={(swiper) => setSwiperInstance(swiper)} // 2. Gán instance ở đây
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000 }}
+                className="testimonial-swiper"
+              >
+                {[1, 2].map((item) => (
+                  <SwiperSlide key={item}>
+                    <div className="relative z-10 flex flex-col items-center mx-auto px-6 max-w-[860px] text-center pt-10 pb-10">
+                      <div className="relative">
+                          <div className="absolute top-[-20px] left-[-20px]">
+                            <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.70373 16.2961C3.28507 16.2961 2.1464 15.8107 1.28773 14.8401C0.429068 13.8321 -0.000265598 12.4881 -0.000265598 10.8081C-0.000265598 8.79206 0.653068 6.86939 1.95973 5.04006C3.2664 3.21072 5.24507 1.53072 7.89573 5.57899e-05L9.63173 2.01606C8.28773 3.13606 7.1304 4.20006 6.15973 5.20806C5.2264 6.17872 4.7224 7.05606 4.64773 7.84006L4.87173 8.00806C5.13307 7.78406 5.54374 7.67206 6.10374 7.67206C6.9624 7.67206 7.6904 8.04539 8.28773 8.79206C8.88507 9.53872 9.18373 10.5467 9.18373 11.8161C9.18373 13.1227 8.77307 14.2054 7.95173 15.0641C7.1304 15.8854 6.04773 16.2961 4.70373 16.2961ZM15.9037 16.2961C14.4851 16.2961 13.3464 15.8107 12.4877 14.8401C11.6291 13.8321 11.1997 12.4881 11.1997 10.8081C11.1997 8.79206 11.8531 6.86939 13.1597 5.04006C14.4664 3.21072 16.4451 1.53072 19.0957 5.57899e-05L20.8317 2.01606C19.4877 3.13606 18.3304 4.20006 17.3597 5.20806C16.4264 6.17872 15.9224 7.05606 15.8477 7.84006L16.0717 8.00806C16.3331 7.78406 16.7437 7.67206 17.3037 7.67206C18.1624 7.67206 18.8904 8.04539 19.4877 8.79206C20.0851 9.53872 20.3837 10.5467 20.3837 11.8161C20.3837 13.1227 19.9731 14.2054 19.1517 15.0641C18.3304 15.8854 17.2477 16.2961 15.9037 16.2961Z" fill="#26B3B8"/>
+                            </svg> 
+                          </div> 
+                          {/* Testimonial Text */}
+                          <blockquote className="apple-reveal text-white text-lg leading-[24px] md:text-2xl md:leading-[28px] font-bold mb-10">
+                            A customer testimonial that highlights features and answers potential customer doubts about your product or service. Showcase testimonials from a similar demographic to your customers.
+                          </blockquote>
+                          <div className="apple-reveal absolute bottom-[40px] right-[-20px]">
+                            <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.92847 5.57899e-05C6.34714 5.57899e-05 7.4858 0.504056 8.34447 1.51206C9.20314 2.48272 9.63247 3.80806 9.63247 5.48806C9.63247 7.50406 8.97914 9.42672 7.67247 11.2561C6.3658 13.0854 4.38714 14.7654 1.73647 16.2961L0.00046885 14.2801C1.34447 13.1601 2.48314 12.1147 3.41647 11.1441C4.38714 10.1361 4.9098 9.24006 4.98447 8.45606L4.76047 8.28806C4.49914 8.51206 4.08847 8.62406 3.52847 8.62406C2.6698 8.62406 1.9418 8.25072 1.34447 7.50406C0.747136 6.75739 0.448469 5.74939 0.448469 4.48006C0.448469 3.17339 0.859136 2.10939 1.68047 1.28806C2.5018 0.429389 3.58447 5.57899e-05 4.92847 5.57899e-05ZM16.1285 5.57899e-05C17.5471 5.57899e-05 18.6858 0.504056 19.5445 1.51206C20.4031 2.48272 20.8325 3.80806 20.8325 5.48806C20.8325 7.50406 20.1791 9.42672 18.8725 11.2561C17.5658 13.0854 15.5871 14.7654 12.9365 16.2961L11.2005 14.2801C12.5445 13.1601 13.6831 12.1147 14.6165 11.1441C15.5871 10.1361 16.1098 9.24006 16.1845 8.45606L15.9605 8.28806C15.6991 8.51206 15.2885 8.62406 14.7285 8.62406C13.8698 8.62406 13.1418 8.25072 12.5445 7.50406C11.9471 6.75739 11.6485 5.74939 11.6485 4.48006C11.6485 3.17339 12.0591 2.10939 12.8805 1.28806C13.7018 0.429389 14.7845 5.57899e-05 16.1285 5.57899e-05Z" fill="#26B3B8"/>
+                            </svg> 
+                          </div>
+                      </div>
+                      {/* Author Info */}
+                      <div className="apple-reveal delay-200 flex items-center gap-4 text-left">
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-400 to-orange-400 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                          G
+                        </div>
+                        <div>
+                          <h4 className="text-white font-bold text-xs leading-[16px] lg:text-base lg:leading-[20px]">Gautam Kohli</h4>
+                          <p className="text-teal-200/70 text-[10px] leading-[16px] lg:text-xs lg:leading-[16px]">Job title</p>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
-            {/* Author Info */}
-            <div className="apple-reveal delay-200 flex items-center gap-4 text-left">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-400 to-orange-400 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                G
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-xs leading-[16px] lg:text-base lg:leading-[20px]">Gautam Kohli</h4>
-                <p className="text-teal-200/70 text-[10px] leading-[16px] lg:text-xs lg:leading-[16px]">Job title</p>
-              </div>
-            </div>
+
+          {/* NAVIGATION BUTTONS */}
+          <div className="mt-14 flex flex-wrap justify-between items-center gap-6">
+            
+            {/* Previous Project */}
+            <button 
+              onClick={() => swiperInstance?.slidePrev()} // 3. Click để quay lại
+              className="px-10 py-[9px] rounded-full border border-[#012C5B] text-[#012C5B] font-bold text-lg hover:bg-gray-50 transition-all duration-300"
+            >
+              Previous project
+            </button>
+
+            {/* Next Project */}
+            <button 
+              onClick={() => swiperInstance?.slideNext()} // 4. Click để đi tiếp
+              className="px-10 py-4 rounded-full bg-[#012C5B] text-white font-bold text-lg hover:bg-[#001D3D] shadow-lg transition-all duration-300"
+            >
+              Next project
+            </button>
+            
           </div>
+
         </div>
-
-        {/* NAVIGATION BUTTONS */}
-        <div className="mt-14 flex flex-wrap justify-between items-center gap-6">
-          {/* Previous Project */}
-          <button className="px-10 py-[9px] rounded-full border border-[#012C5B] text-[#012C5B] font-bold text-lg hover:bg-gray-50 transition-all duration-300">
-            Previous project
-          </button>
-
-          {/* Next Project */}
-          <button className="px-10 py-4 rounded-full bg-[#012C5B] text-white font-bold text-lg hover:bg-[#001D3D] shadow-lg transition-all duration-300">
-            Next project
-          </button>
-        </div>
-
-      </div>
-    </section>
+      </section>
 
 
     <section ref={revealRef6} className="w-full bg-[#F8F9FA] py-8 md:py-16 lg:py-[108px] px-6">
@@ -353,13 +370,13 @@ const OurWorkAppPage = () => {
          <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
           <div className="flex flex-col items-center gap-10 md:flex-row">
             
-            <div className="text-left max-w-[885px] w-full">
-              <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-white tracking-[-2px]">
-                Ready to  <span className="text-[#A6DCDD]">Start Your Project?</span> 
+            <div className="text-left max-w-[985px] w-full">
+              <h2 className="mb-6 apple-reveal font-dmSans text-[32px] leading-[32px] lg:text-[48px] lg:leading-[48px] font-bold text-white tracking-[-2px]">
+                Get Up to <span className="text-[#A6DCDD]">70% Off</span> Your Digital Project
               </h2>
               
               <p className="apple-reveal delay-200 mt-3 max-w-2xl font-dmSans text-lg leading-[24px] lg:text-2xl lg:leading-[28px] text-blue-50/90">
-                We help you unlock government funding so your bespoke website or app can become a reality — with guidance from start to finish.
+                Luxembourg offers generous support for digital projects. We'll guide you through every step to maximize your eligibility.
               </p>
 
               <div className="apple-reveal delay-300 mt-4 flex flex-wrap items-center gap-6 justify-start">
@@ -375,10 +392,11 @@ const OurWorkAppPage = () => {
               </div>
             </div>
 
-             <div className="relative w-full max-w-[260px] h-full mt-10 md:mt-[-180px]"> 
-              <img className="apple-reveal animate-hero-float w-[340px] h-[250px]" alt="" src="/h-img12.png"/>
+             {/* TĂNG max-w Ở ĐÂY (giữ nguyên container) */}
+             <div className="relative w-full max-w-[350px] h-full mt-10 md:mt-[-120px]"> 
+              {/* ĐỔI THÀNH w-full h-auto ĐỂ ẢNH TO THEO CONTAINER */}
+              <img className="apple-reveal animate-hero-float w-full h-auto object-contain" alt="Mockup" src="/h-img12.png"/>
             </div>
-
 
           </div>
         </div>
@@ -391,7 +409,7 @@ const OurWorkAppPage = () => {
           </div>
         </div>
     </div>  
-    </section>
+    </section>    
     
     </>
   );

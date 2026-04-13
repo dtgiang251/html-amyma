@@ -366,13 +366,13 @@ const Services = () => {
          <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)]">
           <div className="flex flex-col items-center gap-10 md:flex-row">
             
-            <div className="text-left max-w-[885px] w-full">
-              <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold text-white tracking-[-2px]">
-                Ready to  <span className="text-[#A6DCDD]">Start Your Project?</span> 
+            <div className="text-left max-w-[985px] w-full">
+              <h2 className="mb-6 apple-reveal font-dmSans text-[32px] leading-[32px] lg:text-[48px] lg:leading-[48px] font-bold text-white tracking-[-2px]">
+                Get Up to <span className="text-[#A6DCDD]">70% Off</span> Your Digital Project
               </h2>
               
               <p className="apple-reveal delay-200 mt-3 max-w-2xl font-dmSans text-lg leading-[24px] lg:text-2xl lg:leading-[28px] text-blue-50/90">
-                We help you unlock government funding so your bespoke website or app can become a reality — with guidance from start to finish.
+                Luxembourg offers generous support for digital projects. We'll guide you through every step to maximize your eligibility.
               </p>
 
               <div className="apple-reveal delay-300 mt-4 flex flex-wrap items-center gap-6 justify-start">
@@ -388,10 +388,11 @@ const Services = () => {
               </div>
             </div>
 
-             <div className="relative w-full max-w-[260px] h-full mt-10 md:mt-[-180px]"> 
-              <img className="apple-reveal animate-hero-float w-[340px] h-[250px]" alt="" src="/h-img12.png"/>
+             {/* TĂNG max-w Ở ĐÂY (giữ nguyên container) */}
+             <div className="relative w-full max-w-[350px] h-full mt-10 md:mt-[-120px]"> 
+              {/* ĐỔI THÀNH w-full h-auto ĐỂ ẢNH TO THEO CONTAINER */}
+              <img className="apple-reveal animate-hero-float w-full h-auto object-contain" alt="Mockup" src="/h-img12.png"/>
             </div>
-
 
           </div>
         </div>
@@ -404,7 +405,7 @@ const Services = () => {
           </div>
         </div>
     </div>  
-    </section>
+    </section>    
       
     </>
   );
