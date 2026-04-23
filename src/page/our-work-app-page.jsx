@@ -72,7 +72,7 @@ const OurWorkAppPage = () => {
               </div>
             </div>
             <div className="flex gap-12 py-8 md:py-14">
-              <div className="flex flex-col sm:px-5 ">
+              <div className="flex flex-col">
                 <h3 className="apple-reveal font-dmSans text-[24px] leading-[40px] lg:text-[40px] lg:leading-[48px] font-bold tracking-[-2px] text-primaryBlue mb-9">
                   The App Idea
                 </h3>       
@@ -91,7 +91,7 @@ const OurWorkAppPage = () => {
         <div className="relative z-10 mx-auto py-8 lg:py-14">
           <div className="relative z-10 mx-auto max-w-[1440px] px-6 sm:px-8 lg:px-16 xl:px-[var(--navX,108px)] grid items-start gap-5 md:grid-cols-2 lg:gap-12">
             <div className="flex gap-12 bg-[#F6F6F6] py-8 md:py-14">
-              <div className="flex flex-col sm:px-5 ">
+              <div className="flex flex-col">
                 <h3 className="apple-reveal font-dmSans text-[24px] leading-[40px] lg:text-[40px] lg:leading-[48px] font-bold tracking-[-2px] text-primaryBlue mb-9">
                   The Objective
                 </h3>       

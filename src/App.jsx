@@ -12,6 +12,9 @@ import OurWorkProject from "./page/our-work-project";
 import OurWorkAppPage from "./page/our-work-app-page";
 
 import Services from "./page/services";
+import Services2 from "./page/services2";
+import Services3 from "./page/services3";
+import Services4 from "./page/services4";
 import Blog from "./page/blog";
 import Footer from "./components/Footer";
  
@@ -45,6 +48,9 @@ function App() {
           <Route path="/page/blog" element={<Blog />} />
           <Route path="/page/word" element={<Word />} /> 
           <Route path="/page/services" element={<Services />} />
+          <Route path="/page/services2" element={<Services2 />} />
+          <Route path="/page/services3" element={<Services3 />} />
+          <Route path="/page/services4" element={<Services4 />} />
           <Route path="/page/single" element={<Single />} />
         </Routes>
         <Footer />

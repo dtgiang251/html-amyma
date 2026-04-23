@@ -9,16 +9,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import 'swiper/css';
-const OurWorkProject = () => { 
-  const [swiperInstance, setSwiperInstance] = useState(null);
-  const revealRef1 = useReveal();  
-  const revealRef2 = useReveal();  
-  const revealRef3 = useReveal();  
-  const revealRef4 = useReveal();  
+const OurWorkProject = () => {  
+  const revealRef1 = useReveal();    
   const revealRef5 = useReveal();  
   const revealRef6 = useReveal();  
-  const revealRef7 = useReveal();  
-  const gridId = useId();
+  const revealRef7 = useReveal();   
 
   return (
     <>
@@ -310,9 +305,7 @@ const OurWorkProject = () => {
               </div>
           </div>
       </section>
-      <div className="absolute z-0 bottom-0 left-0 right-0">
-        <img src="/g-bt.png" alt="" className="w-full"/>
-      </div>
+       
     </section>  
       <section ref={revealRef6} className="w-full bg-[#F8F9FA] py-16 lg:py-24 px-6">
         <div className="mx-auto max-w-[1440px] xl:px-[108px]">

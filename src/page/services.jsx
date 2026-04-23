@@ -52,7 +52,8 @@ const Services = () => {
           <img className="absolute top-0 left-0 right-0 m-auto" alt="" src="/bg-section-05.svg"/>
           <div className="relative z-10 grid items-start gap-12 md:grid-cols-2 lg:gap-12">
             <div className="flex flex-col gap-12">
-              <div className="flex flex-col">
+              <div className="">
+                <span className="apple-reveal text-[#26B3B8] text-lg :leading-6 md:text-2xl md:leading-7">Websites</span>
                 <h2 className="apple-reveal font-dmSans text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] font-bold tracking-[-2px] text-primaryBlue">
                   Custom Websites That Convert. <span className="text-primaryOrange">Crafted From Scratch. </span> 
                 </h2> 
